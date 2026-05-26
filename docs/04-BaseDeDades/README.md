@@ -73,25 +73,32 @@ El modelo E/R representa las entidades principales del sistema:
 - backups.
 
 📸 Captura:
-- `capturas/diagrama_er.png`
+
+<img width="985" height="582" alt="Captura de pantalla de 2026-05-26 08-12-42" src="https://github.com/user-attachments/assets/65681468-798a-48c7-8c2b-3c151fd4e0e0" />
 
 ---
 
 # 6. Modelo relacional
 
-| Tabla | PK | FK |
-|---|---|---|
-| departaments | codi | - |
-| empleats | dni | departament |
-| usuaris_comunicacio | id | - |
-| trucades | id | origen, destinatari |
-| videos | id | - |
-| mesures_amplada_banda | id | - |
-| avisos | id | - |
-| backups_control | id | - |
+| Tabla | Atributos | PK | FK |
+|---|---|---|---|
+| departaments | codi, nom, telefon | codi | - |
+| empleats | dni, nom, cognoms, adreca, telefon, departament | dni | departament → departaments(codi) |
+| nomines | id, dni_empleat, salari, data_nomina | id | dni_empleat → empleats(dni) |
+| usuaris_comunicacio | id, nom, email, extensio, estat, tipus, quota_minuts_mes | id | - |
+| trucades | id, origen, destinatari, inici, fi, durada, qualitat | id | origen → usuaris_comunicacio(id), destinatari → usuaris_comunicacio(id) |
+| videos | id, titol, descripcio, categoria, durada, data_publicacio, enllac | id | - |
+| mesures_amplada_banda | id, data_mesura, usuari, download_mbps, upload_mbps, latencia_ms, resultat, observacions | id | - |
+| avisos | id, usuari, taula_afectada, operacio, data_hora, descripcio | id | - |
+| backups_control | id, data_hora, taules, resultat, ruta | id | - |
+| clients | id, nom, email, telefon | id | - |
+| productes | id, nom, preu | id | - |
+| comandes | id, client_id, data_comanda | id | client_id → clients(id) |
+| cistell | id, client_id, producte_id, quantitat | id | client_id → clients(id), producte_id → productes(id) |
 
 📸 Captura:
-- `capturas/modelo_relacional.png`
+
+<img width="1536" height="1024" alt="imatge" src="https://github.com/user-attachments/assets/df8337cc-49ad-4be5-9fee-035d5a6f4871" />
 
 ---
 
@@ -362,7 +369,30 @@ SELECT * FROM backups_control;
 
 ---
 
-# 18. Conclusión
+# 18. Plantilla de mediciones de ancho de banda
+
+Para facilitar la integración entre el equipo audiovisual y la base de datos de InnovateTech, se ha definido una plantilla estándar en formato CSV para registrar las pruebas de ancho de banda realizadas sobre los servicios de streaming y videoconferencia.
+
+La plantilla permite almacenar:
+
+- fecha y hora de la medición,
+- usuario u operario responsable,
+- velocidad de descarga,
+- velocidad de subida,
+- latencia,
+- resultado de la prueba,
+- observaciones adicionales.
+
+Formato utilizado:
+
+csv:
+
+data_mesura,usuari,download_mbps,upload_mbps,latencia_ms,resultat,observacions
+2026-05-21 10:30:00,operari_audiovisual,850,420,2,acceptable,Streaming 1080p estable
+
+---
+
+# 19. Conclusión
 
 La base de datos de InnovateTech ha sido implementada utilizando MariaDB y automatizada mediante Ansible.
 
