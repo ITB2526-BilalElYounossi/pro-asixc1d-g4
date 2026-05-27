@@ -1,6 +1,6 @@
-# Multimedia — Jellyfin (Streaming de Vídeo)
+# Multimedia - Jellyfin (Streaming de Vídeo)
 
-**Máquina:** EC2-3 — Ubuntu 22.04 LTS  
+**Máquina:** EC2-3 - Ubuntu 22.04 LTS  
 **IP pública:** 100.31.147.184  
 **Puerto:** 8096 TCP
 
@@ -26,9 +26,9 @@ Se ha elegido Jellyfin porque el enunciado lo menciona explícitamente como opci
 
 ## 3. Instalación
 
-*Servidor: EC2-3 — Ubuntu 22.04 LTS — Puerto 8096 TCP abierto en el Security Group de AWS*
+*Servidor: EC2-3 - Ubuntu 22.04 LTS - Puerto 8096 TCP abierto en el Security Group de AWS*
 
-**Paso 1 — Instalar usando el script oficial de Jellyfin:**
+**Paso 1 - Instalar usando el script oficial de Jellyfin:**
 
 ```bash
 curl -fsSL https://repo.jellyfin.org/install-debuntu.sh | sudo bash
@@ -46,10 +46,8 @@ sudo systemctl enable jellyfin
 sudo systemctl start jellyfin
 ```
 
-> 📸 **<img width="734" height="476" alt="unnamed" src="https://github.com/user-attachments/assets/514273f0-aa61-4e6a-b34c-2b00fc0331b4" />
-** — Terminal mostrando la instalación completada de Jellyfin  
-> 📸 **<img width="734" height="476" alt="unnamed" src="https://github.com/user-attachments/assets/d8f4b2b0-6b9c-44ac-a706-979eb81ed230" />
-** — `systemctl status jellyfin` mostrando estado `active (running)`
+<img width="734" height="476" alt="unnamed" src="https://github.com/user-attachments/assets/514273f0-aa61-4e6a-b34c-2b00fc0331b4" />
+<img width="734" height="476" alt="unnamed" src="https://github.com/user-attachments/assets/d8f4b2b0-6b9c-44ac-a706-979eb81ed230" />
 
 ---
 
@@ -84,8 +82,10 @@ Acceder a `http://100.31.147.184:8096` y seguir el wizard:
 | 6. Directorio | Añadir la ruta: `/media/videos` |
 | 7. Finalizar | Hacer clic en Siguiente y Terminar |
 
-> 📸 **Captura 11** — Wizard de configuración inicial de Jellyfin con la biblioteca configurada  
-> 📸 **Captura 12** — Biblioteca creada con el vídeo visible en el panel de Jellyfin
+<img width="904" height="542" alt="unnamed" src="https://github.com/user-attachments/assets/fb304ec5-356b-41c8-8b15-c57c0eab0ec6" />
+
+> <img width="1082" height="588" alt="unnamed" src="https://github.com/user-attachments/assets/71cd22c3-1dc4-4336-8f5b-b24eee1f64ee" />
+
 
 ---
 
