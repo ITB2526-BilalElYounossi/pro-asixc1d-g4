@@ -110,8 +110,9 @@ El relay nativo de Icecast2 no soporta conexiones HTTPS (SSL/TLS). Radio France 
 ```bash
 curl -I https://icecast.radiofrance.fr/franceinter-midfi.mp3
 ```
-
 Debe devolver `HTTP/2 200`.
+<img width="1159" height="419" alt="image" src="https://github.com/user-attachments/assets/307aea1b-311d-4ac2-93fd-8f593fd3b33e" />
+
 
 ### Paso 2 — Crear el servicio systemd
 
@@ -131,6 +132,7 @@ ExecStart=ffmpeg -re -i https://icecast.radiofrance.fr/franceinter-midfi.mp3 -c:
 Restart=always
 RestartSec=10
 User=adminitb
+<img width="1475" height="368" alt="image" src="https://github.com/user-attachments/assets/7fc1931b-f099-4fa6-94e1-c1bf506cdead" />
 
 [Install]
 WantedBy=multi-user.target
