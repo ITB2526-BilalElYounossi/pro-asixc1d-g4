@@ -28,32 +28,8 @@ InnovateTech és una empresa dedicada a la provisió de serveis tecnològics que
 ## Arquitectura AWS
 
 ```
-Internet
-    │
-    ▼
-[Internet Gateway]
-    │
-    ▼
-[Application Load Balancer — alb-innovatetech]
-    │
-┌───────────────────────────────────────────────────────────────┐
-│  VPC: vpc-innovatetech  (10.0.0.0/16)  —  us-east-1          │
-│                                                               │
-│  ┌─── Subnet Pública (10.0.0.0/20) ────────────────────────┐ │
-│  │  web-sftp          52.1.67.249     10.0.5.140            │ │
-│  │  multimedia        32.198.236.17   10.0.8.36             │ │
-│  │  jitsi-meet        3.219.249.6     10.0.14.189           │ │
-│  │  ansible-ctrl      32.193.193.146  10.0.7.201            │ │
-│  └──────────────────────────────────────────────────────────┘ │
-│                                                               │
-│  ┌─── Subnet Privada (10.0.128.0/20) ───────────────────────┐ │
-│  │  samba-ad          —               10.0.141.9            │ │
-│  │  mariadb           —               10.0.142.205          │ │
-│  │  logs-server-private —             10.0.133.107          │ │
-│  └──────────────────────────────────────────────────────────┘ │
-│                                                               │
-│  EFS efs-innovatetech-logs — /mnt/efs-logs (8.0E elàstic)    │
-└───────────────────────────────────────────────────────────────┘
+<img width="574" height="684" alt="imatge" src="https://github.com/user-attachments/assets/6dd0feae-3984-4999-9d6c-fd45513de96b" />
+
 ```
 
 ---
