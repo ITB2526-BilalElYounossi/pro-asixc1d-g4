@@ -1,170 +1,170 @@
-# Proposta de CPD — InnovateTech
+# Propuesta de CPD — InnovateTech
 
 **Responsable:** Bilal El Younossi  
-**Data:** Maig 2026
+**Fecha:** Mayo 2026
 
 ---
 
-## 1. Ubicació física
+## 1. Ubicación física
 
-### 1.1 Situació de la sala a l'edifici
+### 1.1 Situación de la sala en el edificio
 
-El CPD d'InnovateTech es troba a la **primera planta interior** de l'edifici corporatiu, orientada cap al pati interior, sense façana exterior i allunyada de zones de pas públic.
+El CPD de InnovateTech se encuentra en la **primera planta interior** del edificio corporativo, orientada hacia el patio interior, sin fachada exterior y alejada de zonas de paso público.
 
-#### Justificació de la ubicació
+#### Justificación de la ubicación
 
-La primera planta interior ha estat escollida després d'avaluar les alternatives:
+La primera planta interior ha sido elegida tras evaluar las alternativas:
 
-| Ubicació | Risc inundació | Risc accés | Temperatura | Decisió |
-|----------|---------------|------------|-------------|---------|
-| Soterrani | ❌ Alt | ✅ Baix | ✅ Estable | **Descartat** |
-| Planta baixa | ⚠️ Mig | ❌ Alt | ⚠️ Variable | **Descartat** |
-| **1a planta interior** | ✅ Nul | ✅ Baix | ✅ Estable | **✅ Seleccionat** |
-| Última planta | ✅ Nul | ✅ Baix | ❌ Calor | **Descartat** |
+| Ubicación | Riesgo inundación | Riesgo acceso | Temperatura | Decisión |
+|-----------|------------------|---------------|-------------|----------|
+| Sótano | ❌ Alto | ✅ Bajo | ✅ Estable | **Descartado** |
+| Planta baja | ⚠️ Medio | ❌ Alto | ⚠️ Variable | **Descartado** |
+| **1ª planta interior** | ✅ Nulo | ✅ Bajo | ✅ Estable | **✅ Seleccionado** |
+| Última planta | ✅ Nulo | ✅ Bajo | ❌ Calor | **Descartado** |
 
-**Avantatges de la primera planta interior:**
+**Ventajas de la primera planta interior:**
 
-- **Risc d'inundació nul**: elevat sobre el nivell del carrer, protegit de filtracions d'aigua.
-- **Seguretat**: difícil accés des de l'exterior, sense finestres cap al carrer.
-- **Temperatura estable**: l'orientació interior evita la incidència solar directa.
-- **Accés per manteniment**: accessible sense ascensor, facilita el transport d'equips pesats.
-- **Estructura de l'edifici**: les plantes intermèdies suporten millor el pes dels racks (fins a 1.200 kg/m²).
+- **Riesgo de inundación nulo**: elevado sobre el nivel de la calle, protegido de filtraciones de agua.
+- **Seguridad**: difícil acceso desde el exterior, sin ventanas hacia la calle.
+- **Temperatura estable**: la orientación interior evita la incidencia solar directa.
+- **Acceso para mantenimiento**: accesible sin ascensor, facilita el transporte de equipos pesados.
+- **Estructura del edificio**: las plantas intermedias soportan mejor el peso de los racks (hasta 1.200 kg/m²).
 
-La sala ocupa **50 m²** amb dimensions de 10m x 5m i alçada lliure de 3m (2,5m útils amb terra tècnic i sostre tècnic).
+La sala ocupa **50 m²** con dimensiones de 10m x 5m y altura libre de 3m (2,5m útiles con suelo técnico y techo técnico).
 
 ```
 ┌─────────────────────────────────────────────┐
 │            PRIMERA PLANTA                   │
 │                                             │
-│  Oficines   ┌──────────────┐   Oficines     │
-│             │  SALA CPD    │                │
-│             │  (50m²)      │ ← Pati interior│
+│  Oficinas   ┌──────────────┐   Oficinas     │
+│             │   SALA CPD   │                │
+│             │   (50m²)     │ ← Patio inter. │
 │             │  Rack1 Rack2 │                │
 │             │  [A/C] [A/C] │                │
 │             └──────────────┘                │
 │                   ↑                         │
-│            Accés controlat                  │
-│            (porta blindada)                 │
+│            Acceso controlado                │
+│            (puerta blindada)                │
 └─────────────────────────────────────────────┘
 ```
 
-> 📸 Afegir plànol de l'edifici amb la ubicació del CPD marcada.
+> 📸 Añadir plano del edificio con la ubicación del CPD marcada.
 
 ---
 
-### 1.2 Climatització
+### 1.2 Climatización
 
-El sistema de climatització és crític per mantenir els equips en condicions òptimes de funcionament.
+El sistema de climatización es crítico para mantener los equipos en condiciones óptimas de funcionamiento.
 
-#### Paràmetres ambientals objectiu
+#### Parámetros ambientales objetivo
 
-| Paràmetre | Valor òptim | Rang acceptable |
+| Parámetro | Valor óptimo | Rango aceptable |
 |-----------|-------------|-----------------|
 | Temperatura | 21°C | 18°C – 27°C |
-| Humitat relativa | 45% | 40% – 60% |
-| Partícules en suspensió | < 100.000 p/m³ | — |
+| Humedad relativa | 45% | 40% – 60% |
+| Partículas en suspensión | < 100.000 p/m³ | — |
 
-#### Sistema instal·lat
+#### Sistema instalado
 
-- **2 unitats de climatització de precisió** marca APC InRow RC (9 kW cadascuna) en configuració N+1 (una de redundant).
-- **Sistema de flux d'aire** de baix a dalt: aire fred entra pel terra tècnic i l'aire calent surt pel sostre tècnic cap als conductes d'extracció.
-- **Configuració de corredor fred/calent**: els racks estan orientats cara a cara per separar els corredors d'aire fred (davant dels racks) i calent (darrere dels racks).
-- **Sensors ambientals** en 3 punts de la sala: entrada, centre i sortida.
-- **Sistema de filtratge HEPA** per eliminar partícules i pols.
+- **2 unidades de climatización de precisión** marca APC InRow RC (9 kW cada una) en configuración N+1 (una de redundante).
+- **Sistema de flujo de aire** de abajo a arriba: aire frío entra por el suelo técnico y el aire caliente sale por el techo técnico hacia los conductos de extracción.
+- **Configuración de pasillo frío/caliente**: los racks están orientados cara a cara para separar los pasillos de aire frío (delante de los racks) y caliente (detrás de los racks).
+- **Sensores ambientales** en 3 puntos de la sala: entrada, centro y salida.
+- **Sistema de filtrado HEPA** para eliminar partículas y polvo.
 
 ```
-        CORREDOR FRED          CORREDOR CALENT
-        ↓ Aire fred ↓          ↑ Aire calent ↑
+        PASILLO FRÍO           PASILLO CALIENTE
+        ↓ Aire frío ↓          ↑ Aire caliente ↑
    ┌──────────────────────────────────────────┐
    │  [Rack 1] →→→ | ←←← [Rack 2]            │
    │  FRONT          FRONT                    │
-   │  ↑ Aire fred ↑  ↑ Aire fred ↑            │
+   │  ↑ Aire frío ↑  ↑ Aire frío ↑            │
    │                                          │
-   │  [A/C 1]              [A/C 2 redundant]  │
+   │  [A/C 1]              [A/C 2 redundante] │
    └──────────────────────────────────────────┘
-         ↑ Terra tècnic (aire fred)
+         ↑ Suelo técnico (aire frío)
 ```
 
-> 📸 Afegir fotografies del sistema de climatització instal·lat.
+> 📸 Añadir fotografías del sistema de climatización instalado.
 
 ---
 
-### 1.3 Mesures per dificultar la identificació de la sala
+### 1.3 Medidas para dificultar la identificación de la sala
 
-- **Senyalització neutra**: la porta no indica "CPD" ni "Sala de servidors". Apareix identificada com "Manteniment Tècnic B-03".
-- **Sense finestres** cap a l'exterior ni cap al passadís principal.
-- **Porta blindada** sense maneta exterior, amb obertura únicament per targeta RFID.
-- **Cable i alimentació soterrats**: no hi ha cablejat visible als passadissos que pugui indicar la ubicació.
-- **Murs reforçats**: les parets de la sala son de formigó armat de 20cm, sense indicació visual de la seva funció.
+- **Señalización neutra**: la puerta no indica "CPD" ni "Sala de servidores". Aparece identificada como "Mantenimiento Técnico P1-03".
+- **Sin ventanas** hacia el exterior ni hacia el pasillo principal.
+- **Puerta blindada** sin manilla exterior, con apertura únicamente por tarjeta RFID.
+- **Cableado y alimentación enterrados**: no hay cableado visible en los pasillos que pueda indicar la ubicación.
+- **Muros reforzados**: las paredes de la sala son de hormigón armado de 20cm, sin indicación visual de su función.
 
 ---
 
-### 1.4 Distribució i gestió del cablejat
+### 1.4 Distribución y gestión del cableado
 
-#### Principis de gestió del cablejat
+#### Principios de gestión del cableado
 
-- **Separació física** de cablejat de xarxa (blau) i cablejat elèctric (vermell/negre) per evitar interferències.
-- **Etiquetatge** de tots els cables als dos extrems amb codi alfanumèric.
-- **Brides i canals** per mantenir el cablejat ordenat i accessible.
+- **Separación física** de cableado de red (azul) y cableado eléctrico (rojo/negro) para evitar interferencias.
+- **Etiquetado** de todos los cables en los dos extremos con código alfanumérico.
+- **Bridas y canales** para mantener el cableado ordenado y accesible.
 - **Color coding**:
-  - Blau: xarxa de dades (LAN)
-  - Verd: connexions entre switches
-  - Groc: connexions de gestió (IPMI/iLO)
-  - Vermell: alimentació elèctrica
-  - Negre: alimentació SAI
+  - Azul: red de datos (LAN)
+  - Verde: conexiones entre switches
+  - Amarillo: conexiones de gestión (IPMI/iLO)
+  - Rojo: alimentación eléctrica
+  - Negro: alimentación SAI
 
-#### Distribució
+#### Distribución
 
 ```
-TERRA TÈCNIC
-├── Canal 1 (costat esquerre): Cablejat de xarxa
-│   ├── Patch cables Cat6A (blau)
-│   └── Fibra òptica (groc)
-├── Canal 2 (costat dret): Alimentació elèctrica
-│   ├── Cables PDU (vermell)
-│   └── Cables SAI (negre)
-└── Canal central: Connexions entre racks
+SUELO TÉCNICO
+├── Canal 1 (lado izquierdo): Cableado de red
+│   ├── Patch cables Cat6A (azul)
+│   └── Fibra óptica (amarillo)
+├── Canal 2 (lado derecho): Alimentación eléctrica
+│   ├── Cables PDU (rojo)
+│   └── Cables SAI (negro)
+└── Canal central: Conexiones entre racks
 ```
 
-> 📸 Afegir fotografies del cablejat organitzat als racks.
+> 📸 Añadir fotografías del cableado organizado en los racks.
 
 ---
 
-### 1.5 Terra tècnic i sostre tècnic
+### 1.5 Suelo técnico y techo técnico
 
-#### Terra tècnic
+#### Suelo técnico
 
-- **Alçada**: 40 cm sobre el terra estructural.
-- **Plaques**: 60x60 cm d'acer galvanitzat amb acabat antistàtic.
-- **Funció**: distribució d'aire fred des dels climatitzadors cap a la part frontal dels racks, i canalització del cablejat.
-- **Càrrega màxima**: 1.200 kg/m².
+- **Altura**: 40 cm sobre el suelo estructural.
+- **Placas**: 60x60 cm de acero galvanizado con acabado antiestático.
+- **Función**: distribución de aire frío desde los climatizadores hacia la parte frontal de los racks, y canalización del cableado.
+- **Carga máxima**: 1.200 kg/m².
 
-#### Sostre tècnic
+#### Techo técnico
 
-- **Alçada**: 30 cm entre fals sostre i sostre estructural.
-- **Funció**: retorn d'aire calent als climatitzadors i pas de les instal·lacions (elèctrica, detecció d'incendis, cablejat de gestió).
-- **Plaques desmuntables** per facilitar el manteniment.
+- **Altura**: 30 cm entre falso techo y techo estructural.
+- **Función**: retorno de aire caliente a los climatizadores y paso de las instalaciones (eléctrica, detección de incendios, cableado de gestión).
+- **Placas desmontables** para facilitar el mantenimiento.
 
 ```
-┌─────────────────────────────────┐ ← Sostre estructural (3m)
-│    Conductes retorn aire calent  │
-│    Cables gestió                 │
-├─────────────────────────────────┤ ← Fals sostre (2.7m)
+┌─────────────────────────────────┐ ← Techo estructural (3m)
+│    Conductos retorno aire cal.  │
+│    Cables gestión               │
+├─────────────────────────────────┤ ← Falso techo (2.7m)
 │                                 │
-│          ZONA RACKS              │  2.5m útils
+│          ZONA RACKS              │  2.5m útiles
 │                                 │
-├─────────────────────────────────┤ ← Terra tècnic (0.4m)
-│    Cables xarxa / elèctrics     │
-│    Distribució aire fred        │
-└─────────────────────────────────┘ ← Terra estructural (0m)
+├─────────────────────────────────┤ ← Suelo técnico (0.4m)
+│    Cables red / eléctricos      │
+│    Distribución aire frío       │
+└─────────────────────────────────┘ ← Suelo estructural (0m)
 ```
 
 ---
 
-### 1.6 Plànol de la sala CPD
+### 1.6 Plano de la sala CPD
 
 ```
-         10 metres
+         10 metros
     ┌──────────────────────────────┐
     │  [A/C 1]         [A/C 2]    │ 5m
     │                              │
@@ -176,24 +176,24 @@ TERRA TÈCNIC
     │                              │
     │  [SAI 1]         [SAI 2]    │
     │                              │
-    │              ← PORTA →      │
+    │              ← PUERTA →     │
     └──────────────────────────────┘
-    [Panel elèctric]  [Extintors]
+    [Panel eléctrico]  [Extintores]
 ```
 
-> 📸 Afegir plànol CAD o dibuix tècnic de la sala.
+> 📸 Añadir plano CAD o dibujo técnico de la sala.
 
 ---
 
-### 1.7 Estructuració dels racks
+### 1.7 Estructuración de los racks
 
-#### Rack 1 — Servidors i xarxa
+#### Rack 1 — Servidores y red
 
-| U | Equip |
-|---|-------|
-| 1-2 | Patch panel Cat6A (48 ports) |
+| U | Equipo |
+|---|--------|
+| 1-2 | Patch panel Cat6A (48 puertos) |
 | 3 | Switch core (Cisco Catalyst 9300) |
-| 4 | Switch accés (Cisco Catalyst 2960) |
+| 4 | Switch acceso (Cisco Catalyst 2960) |
 | 5 | Firewall (Fortinet FortiGate 100F) |
 | 6-8 | Servidor web-sftp (Dell PowerEdge R350) |
 | 9-11 | Servidor multimedia (Dell PowerEdge R350) |
@@ -202,16 +202,16 @@ TERRA TÈCNIC
 | 18-20 | Servidor Samba AD (Dell PowerEdge R350) |
 | 40-42 | PDU vertical (APC AP8959) |
 
-#### Rack 2 — Bases de dades, logs i emmagatzematge
+#### Rack 2 — Bases de datos, logs y almacenamiento
 
-| U | Equip |
-|---|-------|
-| 1-2 | Patch panel Cat6A (48 ports) |
-| 3 | Switch gestió (Cisco Catalyst 2960) |
+| U | Equipo |
+|---|--------|
+| 1-2 | Patch panel Cat6A (48 puertos) |
+| 3 | Switch gestión (Cisco Catalyst 2960) |
 | 4-6 | Servidor MariaDB (Dell PowerEdge R350) |
 | 7-9 | Servidor logs (Dell PowerEdge R350) |
-| 10-14 | NAS (Synology RS3621xs+, 12 bahies) |
-| 15-16 | Servidor de còpies de seguretat |
+| 10-14 | NAS (Synology RS3621xs+, 12 bahías) |
+| 15-16 | Servidor de copias de seguridad |
 | 40-42 | PDU vertical (APC AP8959) |
 
 ```
@@ -221,7 +221,7 @@ RACK 1                    RACK 2
 │ Panel    │              │ Panel    │ 2U
 ├──────────┤              ├──────────┤
 │ Switch   │              │ Switch   │ 3U
-│ Core     │              │ Gestió   │ 4U
+│ Core     │              │ Gestión  │ 4U
 ├──────────┤              ├──────────┤
 │ Firewall │              │ MariaDB  │ 5-7U
 ├──────────┤              ├──────────┤
@@ -232,798 +232,291 @@ RACK 1                    RACK 2
 │  Jitsi   │              │ Backup   │ 16-17U
 ├──────────┤              ├──────────┤
 │ Ansible  │              │          │
-├──────────┤              │  (lliure)│
+├──────────┤              │ (libre)  │
 │ Samba AD │              │          │
 ├──────────┤              ├──────────┤
 │   PDU    │              │   PDU    │ 40-42U
 └──────────┘              └──────────┘
 ```
 
-> 📸 Afegir fotografies dels racks amb els equips instal·lats.
+> 📸 Añadir fotografías de los racks con los equipos instalados.
 
 ---
 
 ## 2. Infraestructura IT
 
-### 2.1 Servidors
+### 2.1 Servidores
 
-| Servidor | Model | CPU | RAM | Disc | Funció |
-|----------|-------|-----|-----|------|--------|
+| Servidor | Modelo | CPU | RAM | Disco | Función |
+|----------|--------|-----|-----|-------|---------|
 | web-sftp | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Web + SFTP |
 | multimedia | Dell PowerEdge R350 | Intel Xeon E-2334 | 32 GB | 2x960GB SSD RAID1 | Icecast + Jellyfin |
-| jitsi-meet | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Videoconferència |
-| ansible | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Automatització |
-| samba-ad | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Directori actiu |
-| mariadb | Dell PowerEdge R650 | Intel Xeon Silver 4310 | 64 GB | 4x960GB SSD RAID10 | Base de dades |
-| logs-server | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Logs centralitzats |
+| jitsi-meet | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Videoconferencia |
+| ansible | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Automatización |
+| samba-ad | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Directorio activo |
+| mariadb | Dell PowerEdge R650 | Intel Xeon Silver 4310 | 64 GB | 4x960GB SSD RAID10 | Base de datos |
+| logs-server | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Logs centralizados |
 
 ### 2.2 Patch panels
 
-- **2x Patch panel Cat6A de 48 ports** (un per rack)
-- Connexió entre els ports del patch panel i els ports dels switches mitjançant patch cables curts (0,5m) per minimitzar el cablejat dins el rack.
-- Etiquetatge de cada port amb la màquina o dispositiu connectat.
+- **2x Patch panel Cat6A de 48 puertos** (uno por rack)
+- Conexión entre los puertos del patch panel y los puertos de los switches mediante patch cables cortos (0,5m) para minimizar el cableado dentro del rack.
+- Etiquetado de cada puerto con la máquina o dispositivo conectado.
 
 ### 2.3 Switches
 
-| Switch | Model | Ports | Funció |
-|--------|-------|-------|--------|
-| Switch core | Cisco Catalyst 9300-24T | 24x1G + 4x10G uplink | Interconnexió entre racks i uplink internet |
-| Switch accés 1 | Cisco Catalyst 2960-24TC | 24x1G | Connexió servidors Rack 1 |
-| Switch accés 2 | Cisco Catalyst 2960-24TC | 24x1G | Connexió servidors Rack 2 |
-| Switch gestió | Cisco Catalyst 2960-8TC | 8x1G | Gestió IPMI/iLO dels servidors |
+| Switch | Modelo | Puertos | Función |
+|--------|--------|---------|---------|
+| Switch core | Cisco Catalyst 9300-24T | 24x1G + 4x10G uplink | Interconexión entre racks y uplink internet |
+| Switch acceso 1 | Cisco Catalyst 2960-24TC | 24x1G | Conexión servidores Rack 1 |
+| Switch acceso 2 | Cisco Catalyst 2960-24TC | 24x1G | Conexión servidores Rack 2 |
+| Switch gestión | Cisco Catalyst 2960-8TC | 8x1G | Gestión IPMI/iLO de los servidores |
 
 ---
 
-## 3. Infraestructura elèctrica
+## 3. Infraestructura eléctrica
 
-### 3.1 Alimentació redundant
+### 3.1 Alimentación redundante
 
-- **2 línies elèctriques independents** des del quadre general de l'edifici.
-- Cada rack disposa de **2 PDUs** (Power Distribution Units) connectades a línies elèctriques diferents.
-- Tots els servidors tenen **2 fonts d'alimentació** redundants (PSU1 → Línia A, PSU2 → Línia B).
+- **2 líneas eléctricas independientes** desde el cuadro general del edificio.
+- Cada rack dispone de **2 PDUs** (Power Distribution Units) conectadas a líneas eléctricas diferentes.
+- Todos los servidores tienen **2 fuentes de alimentación** redundantes (PSU1 → Línea A, PSU2 → Línea B).
 
 ```
-Xarxa elèctrica
+Red eléctrica
       │
   ┌───┴───┐
-  │  UPS  │  (APC Symmetra LX 16 kVA)
+  │  SAI  │  (APC Symmetra LX 16 kVA)
   └───┬───┘
       │
   ┌───┴─────────┐
   │             │
-Línia A      Línia B
+Línea A      Línea B
   │             │
 PDU Rack1A  PDU Rack1B    PDU Rack2A  PDU Rack2B
   │             │             │           │
 PSU1        PSU2          PSU1        PSU2
-(tots els servidors)
+(todos los servidores)
 ```
 
-### 3.2 SAI — Sistemes d'Alimentació Ininterrompuda
+### 3.2 SAI — Sistemas de Alimentación Ininterrumpida
 
-#### Model seleccionat
+#### Modelo seleccionado
 
-**APC Symmetra LX 16 kVA** amb bateries externes.
+**APC Symmetra LX 16 kVA** con baterías externas.
 
-#### Càlcul de consum
+#### Cálculo de consumo
 
-| Equip | Consum estimat |
-|-------|---------------|
-| 7 servidors Dell PowerEdge R350 | 7 × 350W = 2.450W |
+| Equipo | Consumo estimado |
+|--------|-----------------|
+| 7 servidores Dell PowerEdge R350 | 7 × 350W = 2.450W |
 | 2 switches Cisco Catalyst | 2 × 370W = 740W |
 | 1 switch core Cisco 9300 | 1 × 715W = 715W |
-| 2 climatitzadors APC InRow | 2 × 200W (ventiladors) = 400W |
+| 2 climatizadores APC InRow | 2 × 200W (ventiladores) = 400W |
 | 1 NAS Synology | 1 × 100W = 100W |
 | **TOTAL** | **4.405W** |
-| **Marge de seguretat (+20%)** | **5.286W ≈ 5,3 kW** |
+| **Margen de seguridad (+20%)** | **5.286W ≈ 5,3 kW** |
 
-#### Autonomia
+#### Autonomía
 
-- **SAI APC Symmetra LX 16 kVA** amb 2 mòduls de bateries externs (SYBATT).
-- Cada mòdul proporciona ~15 minuts a plena càrrega.
-- Amb 2 mòduls: **~30 minuts d'autonomia** a plena càrrega.
-- Temps suficient per a un apagat ordenat de tots els servidors o per a que el grup electrogen entri en funcionament.
+- **SAI APC Symmetra LX 16 kVA** con 2 módulos de baterías externos (SYBATT).
+- Cada módulo proporciona ~15 minutos a plena carga.
+- Con 2 módulos: **~30 minutos de autonomía** a plena carga.
+- Tiempo suficiente para un apagado ordenado de todos los servidores o para que el grupo electrógeno entre en funcionamiento.
 
-> **Justificació**: 30 minuts és el temps estàndard recomanat per a CPDs de mida mitjana, suficient per a engegar un generador de backup o fer un apagat controlat.
+> **Justificación**: 30 minutos es el tiempo estándar recomendado para CPDs de tamaño medio, suficiente para arrancar un generador de backup o hacer un apagado controlado.
 
 ---
 
-## 4. Seguretat física
+## 4. Seguridad física
 
-### 4.1 Control d'accés
+### 4.1 Control de acceso
 
-- **Porta blindada** amb tancament electrònic i obertura per doble factor:
-  1. Targeta RFID (HID iClass)
-  2. PIN de 6 dígits
-- **Registre d'accessos**: tot accés queda registrat amb data, hora i identitat.
-- **Llista blanca**: únicament personal autoritzat explícitament pot accedir.
-- **Accés d'emergència**: clau física en caixa forta al despatx del responsable IT.
-- **Alarma**: activació automàtica si la porta s'obre sense autenticació o queda oberta més de 60 segons.
+- **Puerta blindada** con cierre electrónico y apertura por doble factor:
+  1. Tarjeta RFID (HID iClass)
+  2. PIN de 6 dígitos
+- **Registro de accesos**: todo acceso queda registrado con fecha, hora e identidad.
+- **Lista blanca**: únicamente personal autorizado explícitamente puede acceder.
+- **Acceso de emergencia**: llave física en caja fuerte en el despacho del responsable IT.
+- **Alarma**: activación automática si la puerta se abre sin autenticación o queda abierta más de 60 segundos.
 
-### 4.2 Videovigilància
+### 4.2 Videovigilancia
 
-- **4 càmeres IP** de 4K (Axis P3245-V) distribuïdes:
-  - 1 a l'entrada de la sala
-  - 1 al corredor fred (davant dels racks)
-  - 1 al corredor calent (darrere dels racks)
-  - 1 a la zona del quadre elèctric i SAI
-- **Enregistrament**: 24/7 amb retenció de 30 dies en NAS dedicat.
-- **Alertes**: detecció de moviment amb notificació per correu electrònic.
-- **Accés remot**: visualització en temps real des del sistema de gestió IT.
+- **4 cámaras IP** de 4K (Axis P3245-V) distribuidas:
+  - 1 en la entrada de la sala
+  - 1 en el pasillo frío (delante de los racks)
+  - 1 en el pasillo caliente (detrás de los racks)
+  - 1 en la zona del cuadro eléctrico y SAI
+- **Grabación**: 24/7 con retención de 30 días en NAS dedicado.
+- **Alertas**: detección de movimiento con notificación por correo electrónico.
+- **Acceso remoto**: visualización en tiempo real desde el sistema de gestión IT.
 
 ```
 ┌──────────────────────────────┐
-│  📷 Càmera entrada           │
+│  📷 Cámara entrada           │
 │                              │
 │  ┌────────┐   ┌────────┐    │
 │  │📷 Rack1│   │ Rack 2 │📷  │
 │  └────────┘   └────────┘    │
 │                              │
-│         📷 SAI/Elèctric      │
+│         📷 SAI/Eléctrico     │
 └──────────────────────────────┘
 ```
 
-> 📸 Afegir fotografies de les càmeres instal·lades.
+> 📸 Añadir fotografías de las cámaras instaladas.
 
-### 4.3 Sistemes de prevenció i extinció d'incendis
+### 4.3 Sistemas de prevención y extinción de incendios
 
-- **Detectors de fum** iònics i òptics distribuïts cada 9m² (6 unitats).
-- **Detectors de temperatura** amb alarma a 60°C.
-- **Sistema d'extinció per gas inert** (Inergen IG-541, 52% N₂, 40% Ar, 8% CO₂):
-  - No danya els equips electrònics.
-  - Segur per a persones (reducció d'O₂ fins al 12,5%).
-  - Activació automàtica als 30 segons de detecció confirmada.
-  - Activació manual des del panell de control a l'entrada.
-- **Extintors manuals** CO₂ (2 unitats) per a actuació manual.
-- **Panell de control d'incendis** a l'entrada connectat al sistema central de l'edifici.
+- **Detectores de humo** iónicos y ópticos distribuidos cada 9m² (6 unidades).
+- **Detectores de temperatura** con alarma a 60°C.
+- **Sistema de extinción por gas inerte** (Inergen IG-541, 52% N₂, 40% Ar, 8% CO₂):
+  - No daña los equipos electrónicos.
+  - Seguro para personas (reducción de O₂ hasta el 12,5%).
+  - Activación automática a los 30 segundos de detección confirmada.
+  - Activación manual desde el panel de control en la entrada.
+- **Extintores manuales** CO₂ (2 unidades) para actuación manual.
+- **Panel de control de incendios** en la entrada conectado al sistema central del edificio.
 
-### 4.4 Vies d'evacuació
+### 4.4 Vías de evacuación
 
-- **Porta principal** (única entrada/sortida): obertura en mode pànic des de l'interior.
-- **Senyalització fotoluminescent** de la ruta d'evacuació.
-- **Il·luminació d'emergència** autònoma amb bateria de 3 hores.
-- **Punt de trobada** designat a l'aparcament exterior, a 50m de l'edifici.
+- **Puerta principal** (única entrada/salida): apertura en modo pánico desde el interior.
+- **Señalización fotoluminiscente** de la ruta de evacuación.
+- **Iluminación de emergencia** autónoma con batería de 3 horas.
+- **Punto de encuentro** designado en el aparcamiento exterior, a 50m del edificio.
 
 ```
-CPD                     Passadís              Sortida
-┌──────┐    ←←←←←←←←←    ┌──────┐   →→→→   ┌──────┐
-│      │ Porta emergència  │      │           │SORTIDA│
-│      │ ──────────────►   │      │           │ 🚪   │
-└──────┘                   └──────┘           └──────┘
+CPD                    Pasillo               Salida
+┌──────┐   ←←←←←←←←←   ┌──────┐   →→→→   ┌──────┐
+│      │ Puerta emerg.   │      │           │SALIDA│
+│      │ ─────────────►  │      │           │ 🚪   │
+└──────┘                 └──────┘           └──────┘
 ```
 
-> 📸 Afegir plànol de les vies d'evacuació.
+> 📸 Añadir plano de las vías de evacuación.
 
 ---
 
-## 5. Seguretat lògica
+## 5. Seguridad lógica
 
-### 5.1 Restricció d'accés per autorització
+### 5.1 Restricción de acceso por autorización
 
-- **Autenticació centralitzada** via Samba AD (domini BTIS).
-- **Rols diferenciats**: cada usuari té accés únicament a les dades del seu departament.
-- **Accés SSH** únicament amb clau pública/privada, sense contrasenyes.
-- **Usuari administrador**: `adminitb` (específic del projecte, no l'usuari per defecte).
-- **Sudo sense contrasenya** per a l'usuari adminitb amb registre de totes les accions.
+- **Autenticación centralizada** via Samba AD (dominio BTIS).
+- **Roles diferenciados**: cada usuario tiene acceso únicamente a los datos de su departamento.
+- **Acceso SSH** únicamente con clave pública/privada, sin contraseñas.
+- **Usuario administrador**: `adminitb` (específico del proyecto, no el usuario por defecto).
+- **Sudo sin contraseña** para el usuario adminitb con registro de todas las acciones.
 
 ### 5.2 Firewalls — Security Groups AWS
 
-Cada instància EC2 té el seu Security Group específic amb el **principi de mínim privilegi**:
+Cada instancia EC2 tiene su Security Group específico con el **principio de mínimo privilegio**:
 
-- Les màquines de la subnet privada (samba-ad, mariadb, logs-server) no tenen IP pública i només accepten trànsit intern.
-- Els ports oberts al públic es limiten al mínim necessari (80, 443, 22).
-- El servidor de bases de dades (MariaDB) només accepta connexions des de la VPC interna (port 3306).
+- Las máquinas de la subnet privada (samba-ad, mariadb, logs-server) no tienen IP pública y solo aceptan tráfico interno.
+- Los puertos abiertos al público se limitan al mínimo necesario (80, 443, 22).
+- El servidor de bases de datos (MariaDB) solo acepta conexiones desde la VPC interna (puerto 3306).
 
-Vegeu la documentació completa dels Security Groups a `arquitectura.md`.
+Ver la documentación completa de los Security Groups en `arquitectura.md`.
 
-### 5.3 Monitoratge
+### 5.3 Monitorización
 
-- **Logs centralitzats** via rsyslog al servidor `logs-server-private`, emmagatzemats al EFS.
-- **Dashboard de logs** al portal web (accessible únicament per `admin.itb`).
-- **CloudWatch** d'AWS per a mètriques de CPU, memòria i xarxa de les EC2.
-- **Alertes automàtiques** via SNS quan el disc supera el 80% d'ús.
-- **Logrotate** configurat per rotar logs diàriament i mantenir 7 dies d'historial.
+- **Logs centralizados** via rsyslog en el servidor `logs-server-private`, almacenados en el EFS.
+- **Dashboard de logs** en el portal web (accesible únicamente por `admin.itb`).
+- **CloudWatch** de AWS para métricas de CPU, memoria y red de las EC2.
+- **Alertas automáticas** via SNS cuando el disco supera el 80% de uso.
+- **Logrotate** configurado para rotar logs diariamente y mantener 7 días de historial.
 
-### 5.4 Còpies de seguretat
+### 5.4 Copias de seguridad
 
-- **Backup diari automàtic** de MariaDB via event scheduler:
+- **Backup diario automático** de MariaDB via event scheduler:
   ```sql
-  CREATE EVENT ev_backup_diari
+  CREATE EVENT ev_backup_diario
   ON SCHEDULE EVERY 1 DAY
   DO SELECT * INTO OUTFILE '/var/lib/mysql-files/backup_...'
   ```
-- **Taula `backups_control`** a MariaDB per registrar l'estat de cada backup.
-- **S3 bucket** `s3-innovatetech-media` per a còpies de seguretat externes.
-- **Snapshots EBS** setmanals de totes les instàncies EC2 via AWS Backup.
+- **Tabla `backups_control`** en MariaDB para registrar el estado de cada backup.
+- **S3 bucket** `s3-innovatetech-media` para copias de seguridad externas.
+- **Snapshots EBS** semanales de todas las instancias EC2 via AWS Backup.
 
 ### 5.5 RAIDs
 
-Tots els servidors físics del CPD incorporen RAID per garantir la disponibilitat de dades:
+Todos los servidores físicos del CPD incorporan RAID para garantizar la disponibilidad de datos:
 
-| Servidor | RAID | Configuració | Justificació |
-|----------|------|-------------|--------------|
-| Servidors generals | RAID 1 | 2x SSD mirall | Redundància sense pèrdua de rendiment |
-| MariaDB | RAID 10 | 4x SSD | Màxim rendiment + redundància per a BD |
-| NAS backup | RAID 6 | 12x HDD | Tolerància a 2 fallades simultànies |
+| Servidor | RAID | Configuración | Justificación |
+|----------|------|---------------|---------------|
+| Servidores generales | RAID 1 | 2x SSD espejo | Redundancia sin pérdida de rendimiento |
+| MariaDB | RAID 10 | 4x SSD | Máximo rendimiento + redundancia para BD |
+| NAS backup | RAID 6 | 12x HDD | Tolerancia a 2 fallos simultáneos |
 
-> **Justificació RAID 1 per servidors**: Còpia exacta en temps real. Si un disc falla, el servidor continua funcionant sense interrupció. El cost és assumible (doble disc) per a màquines de servei.
+> **Justificación RAID 1 para servidores**: Copia exacta en tiempo real. Si un disco falla, el servidor continúa funcionando sin interrupción.
 
-> **Justificació RAID 10 per MariaDB**: La base de dades és el component més crític. RAID 10 combina la velocitat de RAID 0 (striping) amb la redundància de RAID 1 (mirroring), ideal per a càrregues de lectura/escriptura intenses.
-
----
-
-## 6. Prevenció de riscos laborals
-
-### 6.1 Riscos identificats al CPD
-
-| Risc | Mesura preventiva |
-|------|-------------------|
-| Caigudes per cablejat al terra | Terra tècnic elevat, cablejat canalitzat |
-| Descàrregues elèctriques | Totes les instal·lacions per professional certificat, senyalització de perill elèctric |
-| Soroll dels equips (>85 dB) | EPI obligatori (protectors auditius) per treballs de >30 min al CPD |
-| Temperatura extrema | Sensors i alarmes ambientals, accés limitat a personal format |
-| Incendi | Detectors, extinció automàtica, simulacres anuals |
-| Atrapament a l'interior | Porta obre des de l'interior sense codi, sistema antipànic |
-| Exposició a gasos d'extinció | Protocol d'evacuació previ a activació automàtica (retard 30s) |
-| Sobrecàrrega de racks | Racks certificats per càrrega màxima, distribució de pes documentada |
-
-### 6.2 Mesures generals
-
-- **Formació obligatòria** per a tot el personal que accedeixi al CPD: riscos elèctrics, protocol d'incendis i evacuació.
-- **Treball en solitari prohibit**: sempre mínim 2 persones durant intervencions als equips.
-- **EPIs disponibles** a l'entrada: guants dielèctrics, ulleres de protecció, protectors auditius.
-- **Senyalització** de riscos elèctrics, càrregues pesades i zones de pas restringit.
-- **Simulacres d'evacuació** almenys 1 vegada a l'any.
-- **Registre de manteniment** documentat per a totes les intervencions.
+> **Justificación RAID 10 para MariaDB**: La base de datos es el componente más crítico. RAID 10 combina la velocidad de RAID 0 (striping) con la redundancia de RAID 1 (mirroring), ideal para cargas de lectura/escritura intensas.
 
 ---
 
-## 7. Implementació al núvol AWS
+## 6. Prevención de riesgos laborales
 
-### 7.1 Serveis implementats
+### 6.1 Riesgos identificados en el CPD
 
-| Servei | Màquina | IP Privada | Tecnologia |
-|--------|---------|------------|------------|
-| Servei web | web-sftp | 10.0.5.140 | NGINX + PHP + HTTPS |
-| Servei SFTP | web-sftp | 10.0.5.140 | OpenSSH SFTP + Samba AD |
-| Logs centralitzats | logs-server-private | 10.0.133.107 | rsyslog + EFS |
-| Directori actiu | samba-ad | 10.0.141.9 | Samba AD (domini BTIS) |
-| Base de dades | mariadb | 10.0.142.205 | MariaDB 10.11 |
-| Àudio/streaming | multimedia | 10.0.8.36 | Icecast2 + ffmpeg |
+| Riesgo | Medida preventiva |
+|--------|------------------|
+| Caídas por cableado en el suelo | Suelo técnico elevado, cableado canalizado |
+| Descargas eléctricas | Todas las instalaciones por profesional certificado, señalización de peligro eléctrico |
+| Ruido de los equipos (>85 dB) | EPI obligatorio (protectores auditivos) para trabajos de >30 min en el CPD |
+| Temperatura extrema | Sensores y alarmas ambientales, acceso limitado a personal formado |
+| Incendio | Detectores, extinción automática, simulacros anuales |
+| Atrapamiento en el interior | Puerta abre desde el interior sin código, sistema antipánico |
+| Exposición a gases de extinción | Protocolo de evacuación previo a activación automática (retardo 30s) |
+| Sobrecarga de racks | Racks certificados por carga máxima, distribución de peso documentada |
+
+### 6.2 Medidas generales
+
+- **Formación obligatoria** para todo el personal que acceda al CPD: riesgos eléctricos, protocolo de incendios y evacuación.
+- **Trabajo en solitario prohibido**: siempre mínimo 2 personas durante intervenciones en los equipos.
+- **EPIs disponibles** en la entrada: guantes dieléctricos, gafas de protección, protectores auditivos.
+- **Señalización** de riesgos eléctricos, cargas pesadas y zonas de paso restringido.
+- **Simulacros de evacuación** al menos 1 vez al año.
+- **Registro de mantenimiento** documentado para todas las intervenciones.
+
+---
+
+## 7. Implementación en la nube AWS
+
+### 7.1 Servicios implementados
+
+| Servicio | Máquina | IP Privada | Tecnología |
+|----------|---------|------------|------------|
+| Servicio web | web-sftp | 10.0.5.140 | NGINX + PHP + HTTPS |
+| Servicio SFTP | web-sftp | 10.0.5.140 | OpenSSH SFTP + Samba AD |
+| Logs centralizados | logs-server-private | 10.0.133.107 | rsyslog + EFS |
+| Directorio activo | samba-ad | 10.0.141.9 | Samba AD (dominio BTIS) |
+| Base de datos | mariadb | 10.0.142.205 | MariaDB 10.11 |
+| Audio/streaming | multimedia | 10.0.8.36 | Icecast2 + ffmpeg |
 | Vídeo | multimedia | 10.0.8.36 | Jellyfin |
-| Videoconferència | jitsi-meet | 10.0.14.189 | Jitsi Meet (Docker) |
+| Videoconferencia | jitsi-meet | 10.0.14.189 | Jitsi Meet (Docker) |
 
-### 7.2 Serveis per màquina separada
+### 7.2 Servicios por máquina separada
 
-Cada servei principal està instal·lat en una instància EC2 diferent, complint el requisit del projecte:
+Cada servicio principal está instalado en una instancia EC2 diferente, cumpliendo el requisito del proyecto:
 
-- ✅ Servei web + SFTP → `web-sftp` (excepció permesa)
-- ✅ Logs centralitzats → `logs-server-private`
-- ✅ Directori actiu → `samba-ad`
-- ✅ Base de dades → `mariadb`
-- ✅ Àudio/Vídeo → `multimedia`
-- ✅ Videoconferència → `jitsi-meet`
-- ✅ Automatització → `ansible-controller`
+- ✅ Servicio web + SFTP → `web-sftp` (excepción permitida)
+- ✅ Logs centralizados → `logs-server-private`
+- ✅ Directorio activo → `samba-ad`
+- ✅ Base de datos → `mariadb`
+- ✅ Audio/Vídeo → `multimedia`
+- ✅ Videoconferencia → `jitsi-meet`
+- ✅ Automatización → `ansible-controller`
 
-### 7.3 Automatització amb Ansible
+### 7.3 Automatización con Ansible
 
-Més de 2 màquines configurades amb Ansible:
+Más de 2 máquinas configuradas con Ansible:
 
-- ✅ `logs-server-private`: rsyslog receptor + EFS muntat
-- ✅ `web-sftp`: rsyslog client
-- ✅ `mariadb`: MariaDB + rsyslog client
-- ✅ Totes les EC2: rsyslog client via playbook `logs_clients.yml`
+- ✅ `logs-server-private`: rsyslog receptor + EFS montado
+- ✅ `web-sftp`: rsyslog cliente
+- ✅ `mariadb`: MariaDB + rsyslog cliente
+- ✅ Todas las EC2: rsyslog cliente via playbook `logs_clients.yml`
 
-### 7.4 Administració amb usuari específic
+### 7.4 Administración con usuario específico
 
-- Usuari: `adminitb` (no l'usuari per defecte `ubuntu`)
-- Autenticació: clau pública/privada (I.pem, S.pem, T.pem)
-- Accés SSH sense contrasenya
-- Sudo sense contrasenya per a operacions d'administració# Proposta de CPD — InnovateTech
-
-**Responsable:** Bilal El Younossi  
-**Data:** Maig 2026
-
----
-
-## 1. Ubicació física
-
-### 1.1 Situació de la sala a l'edifici
-
-El CPD d'InnovateTech es troba a la **planta soterrani** de l'edifici corporatiu, allunyat de façanes exteriors i zones de pas públic. Aquesta ubicació ofereix els avantatges següents:
-
-- **Protecció tèrmica**: la planta soterrani manté temperatures més estables durant tot l'any.
-- **Seguretat**: difícil accés des de l'exterior, sense finestres.
-- **Reducció de vibracions**: allunyat de vies de circulació pesada.
-- **Accés controlat**: un únic accés principal amb porta blindada.
-
-La sala ocupa **50 m²** amb dimensions de 10m x 5m i alçada lliure de 3m (2,5m útils amb terra tècnic i sostre tècnic).
-
-```
-┌─────────────────────────────────────────────┐
-│              PLANTA SOTERRANI               │
-│                                             │
-│  ┌─────────────────────┐                    │
-│  │   SALA CPD (50m²)   │ ← Accés controlat  │
-│  │                     │   porta blindada    │
-│  │  Rack 1 │ Rack 2    │                    │
-│  │         │           │                    │
-│  │  [A/C]  │  [A/C]    │                    │
-│  └─────────────────────┘                    │
-│                                             │
-│  Escales   Aparcament   Magatzem            │
-└─────────────────────────────────────────────┘
-```
-
-> 📸 Afegir plànol de l'edifici amb la ubicació del CPD marcada.
-
----
-
-### 1.2 Climatització
-
-El sistema de climatització és crític per mantenir els equips en condicions òptimes de funcionament.
-
-#### Paràmetres ambientals objectiu
-
-| Paràmetre | Valor òptim | Rang acceptable |
-|-----------|-------------|-----------------|
-| Temperatura | 21°C | 18°C – 27°C |
-| Humitat relativa | 45% | 40% – 60% |
-| Partícules en suspensió | < 100.000 p/m³ | — |
-
-#### Sistema instal·lat
-
-- **2 unitats de climatització de precisió** marca APC InRow RC (9 kW cadascuna) en configuració N+1 (una de redundant).
-- **Sistema de flux d'aire** de baix a dalt: aire fred entra pel terra tècnic i l'aire calent surt pel sostre tècnic cap als conductes d'extracció.
-- **Configuració de corredor fred/calent**: els racks estan orientats cara a cara per separar els corredors d'aire fred (davant dels racks) i calent (darrere dels racks).
-- **Sensors ambientals** en 3 punts de la sala: entrada, centre i sortida.
-- **Sistema de filtratge HEPA** per eliminar partícules i pols.
-
-```
-        CORREDOR FRED          CORREDOR CALENT
-        ↓ Aire fred ↓          ↑ Aire calent ↑
-   ┌──────────────────────────────────────────┐
-   │  [Rack 1] →→→ | ←←← [Rack 2]            │
-   │  FRONT          FRONT                    │
-   │  ↑ Aire fred ↑  ↑ Aire fred ↑            │
-   │                                          │
-   │  [A/C 1]              [A/C 2 redundant]  │
-   └──────────────────────────────────────────┘
-         ↑ Terra tècnic (aire fred)
-```
-
-> 📸 Afegir fotografies del sistema de climatització instal·lat.
-
----
-
-### 1.3 Mesures per dificultar la identificació de la sala
-
-- **Senyalització neutra**: la porta no indica "CPD" ni "Sala de servidors". Apareix identificada com "Manteniment Tècnic B-03".
-- **Sense finestres** cap a l'exterior ni cap al passadís principal.
-- **Porta blindada** sense maneta exterior, amb obertura únicament per targeta RFID.
-- **Cable i alimentació soterrats**: no hi ha cablejat visible als passadissos que pugui indicar la ubicació.
-- **Murs reforçats**: les parets de la sala son de formigó armat de 20cm, sense indicació visual de la seva funció.
-
----
-
-### 1.4 Distribució i gestió del cablejat
-
-#### Principis de gestió del cablejat
-
-- **Separació física** de cablejat de xarxa (blau) i cablejat elèctric (vermell/negre) per evitar interferències.
-- **Etiquetatge** de tots els cables als dos extrems amb codi alfanumèric.
-- **Brides i canals** per mantenir el cablejat ordenat i accessible.
-- **Color coding**:
-  - Blau: xarxa de dades (LAN)
-  - Verd: connexions entre switches
-  - Groc: connexions de gestió (IPMI/iLO)
-  - Vermell: alimentació elèctrica
-  - Negre: alimentació SAI
-
-#### Distribució
-
-```
-TERRA TÈCNIC
-├── Canal 1 (costat esquerre): Cablejat de xarxa
-│   ├── Patch cables Cat6A (blau)
-│   └── Fibra òptica (groc)
-├── Canal 2 (costat dret): Alimentació elèctrica
-│   ├── Cables PDU (vermell)
-│   └── Cables SAI (negre)
-└── Canal central: Connexions entre racks
-```
-
-> 📸 Afegir fotografies del cablejat organitzat als racks.
-
----
-
-### 1.5 Terra tècnic i sostre tècnic
-
-#### Terra tècnic
-
-- **Alçada**: 40 cm sobre el terra estructural.
-- **Plaques**: 60x60 cm d'acer galvanitzat amb acabat antistàtic.
-- **Funció**: distribució d'aire fred des dels climatitzadors cap a la part frontal dels racks, i canalització del cablejat.
-- **Càrrega màxima**: 1.200 kg/m².
-
-#### Sostre tècnic
-
-- **Alçada**: 30 cm entre fals sostre i sostre estructural.
-- **Funció**: retorn d'aire calent als climatitzadors i pas de les instal·lacions (elèctrica, detecció d'incendis, cablejat de gestió).
-- **Plaques desmuntables** per facilitar el manteniment.
-
-```
-┌─────────────────────────────────┐ ← Sostre estructural (3m)
-│    Conductes retorn aire calent  │
-│    Cables gestió                 │
-├─────────────────────────────────┤ ← Fals sostre (2.7m)
-│                                 │
-│          ZONA RACKS              │  2.5m útils
-│                                 │
-├─────────────────────────────────┤ ← Terra tècnic (0.4m)
-│    Cables xarxa / elèctrics     │
-│    Distribució aire fred        │
-└─────────────────────────────────┘ ← Terra estructural (0m)
-```
-
----
-
-### 1.6 Plànol de la sala CPD
-
-```
-         10 metres
-    ┌──────────────────────────────┐
-    │  [A/C 1]         [A/C 2]    │ 5m
-    │                              │
-    │  ┌────────┐   ┌────────┐    │
-    │  │ RACK 1 │   │ RACK 2 │    │
-    │  │        │   │        │    │
-    │  │ 42U    │   │ 42U    │    │
-    │  └────────┘   └────────┘    │
-    │                              │
-    │  [SAI 1]         [SAI 2]    │
-    │                              │
-    │              ← PORTA →      │
-    └──────────────────────────────┘
-    [Panel elèctric]  [Extintors]
-```
-
-> 📸 Afegir plànol CAD o dibuix tècnic de la sala.
-
----
-
-### 1.7 Estructuració dels racks
-
-#### Rack 1 — Servidors i xarxa
-
-| U | Equip |
-|---|-------|
-| 1-2 | Patch panel Cat6A (48 ports) |
-| 3 | Switch core (Cisco Catalyst 9300) |
-| 4 | Switch accés (Cisco Catalyst 2960) |
-| 5 | Firewall (Fortinet FortiGate 100F) |
-| 6-8 | Servidor web-sftp (Dell PowerEdge R350) |
-| 9-11 | Servidor multimedia (Dell PowerEdge R350) |
-| 12-14 | Servidor Jitsi (Dell PowerEdge R350) |
-| 15-17 | Servidor Ansible (Dell PowerEdge R350) |
-| 18-20 | Servidor Samba AD (Dell PowerEdge R350) |
-| 40-42 | PDU vertical (APC AP8959) |
-
-#### Rack 2 — Bases de dades, logs i emmagatzematge
-
-| U | Equip |
-|---|-------|
-| 1-2 | Patch panel Cat6A (48 ports) |
-| 3 | Switch gestió (Cisco Catalyst 2960) |
-| 4-6 | Servidor MariaDB (Dell PowerEdge R350) |
-| 7-9 | Servidor logs (Dell PowerEdge R350) |
-| 10-14 | NAS (Synology RS3621xs+, 12 bahies) |
-| 15-16 | Servidor de còpies de seguretat |
-| 40-42 | PDU vertical (APC AP8959) |
-
-```
-RACK 1                    RACK 2
-┌──────────┐              ┌──────────┐
-│ Patch    │              │ Patch    │ 1U
-│ Panel    │              │ Panel    │ 2U
-├──────────┤              ├──────────┤
-│ Switch   │              │ Switch   │ 3U
-│ Core     │              │ Gestió   │ 4U
-├──────────┤              ├──────────┤
-│ Firewall │              │ MariaDB  │ 5-7U
-├──────────┤              ├──────────┤
-│ web-sftp │              │ Logs     │ 8-10U
-├──────────┤              ├──────────┤
-│Multimedia│              │ NAS      │ 11-15U
-├──────────┤              ├──────────┤
-│  Jitsi   │              │ Backup   │ 16-17U
-├──────────┤              ├──────────┤
-│ Ansible  │              │          │
-├──────────┤              │  (lliure)│
-│ Samba AD │              │          │
-├──────────┤              ├──────────┤
-│   PDU    │              │   PDU    │ 40-42U
-└──────────┘              └──────────┘
-```
-
-> 📸 Afegir fotografies dels racks amb els equips instal·lats.
-
----
-
-## 2. Infraestructura IT
-
-### 2.1 Servidors
-
-| Servidor | Model | CPU | RAM | Disc | Funció |
-|----------|-------|-----|-----|------|--------|
-| web-sftp | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Web + SFTP |
-| multimedia | Dell PowerEdge R350 | Intel Xeon E-2334 | 32 GB | 2x960GB SSD RAID1 | Icecast + Jellyfin |
-| jitsi-meet | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Videoconferència |
-| ansible | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Automatització |
-| samba-ad | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Directori actiu |
-| mariadb | Dell PowerEdge R650 | Intel Xeon Silver 4310 | 64 GB | 4x960GB SSD RAID10 | Base de dades |
-| logs-server | Dell PowerEdge R350 | Intel Xeon E-2334 | 16 GB | 2x480GB SSD RAID1 | Logs centralitzats |
-
-### 2.2 Patch panels
-
-- **2x Patch panel Cat6A de 48 ports** (un per rack)
-- Connexió entre els ports del patch panel i els ports dels switches mitjançant patch cables curts (0,5m) per minimitzar el cablejat dins el rack.
-- Etiquetatge de cada port amb la màquina o dispositiu connectat.
-
-### 2.3 Switches
-
-| Switch | Model | Ports | Funció |
-|--------|-------|-------|--------|
-| Switch core | Cisco Catalyst 9300-24T | 24x1G + 4x10G uplink | Interconnexió entre racks i uplink internet |
-| Switch accés 1 | Cisco Catalyst 2960-24TC | 24x1G | Connexió servidors Rack 1 |
-| Switch accés 2 | Cisco Catalyst 2960-24TC | 24x1G | Connexió servidors Rack 2 |
-| Switch gestió | Cisco Catalyst 2960-8TC | 8x1G | Gestió IPMI/iLO dels servidors |
-
----
-
-## 3. Infraestructura elèctrica
-
-### 3.1 Alimentació redundant
-
-- **2 línies elèctriques independents** des del quadre general de l'edifici.
-- Cada rack disposa de **2 PDUs** (Power Distribution Units) connectades a línies elèctriques diferents.
-- Tots els servidors tenen **2 fonts d'alimentació** redundants (PSU1 → Línia A, PSU2 → Línia B).
-
-```
-Xarxa elèctrica
-      │
-  ┌───┴───┐
-  │  UPS  │  (APC Symmetra LX 16 kVA)
-  └───┬───┘
-      │
-  ┌───┴─────────┐
-  │             │
-Línia A      Línia B
-  │             │
-PDU Rack1A  PDU Rack1B    PDU Rack2A  PDU Rack2B
-  │             │             │           │
-PSU1        PSU2          PSU1        PSU2
-(tots els servidors)
-```
-
-### 3.2 SAI — Sistemes d'Alimentació Ininterrompuda
-
-#### Model seleccionat
-
-**APC Symmetra LX 16 kVA** amb bateries externes.
-
-#### Càlcul de consum
-
-| Equip | Consum estimat |
-|-------|---------------|
-| 7 servidors Dell PowerEdge R350 | 7 × 350W = 2.450W |
-| 2 switches Cisco Catalyst | 2 × 370W = 740W |
-| 1 switch core Cisco 9300 | 1 × 715W = 715W |
-| 2 climatitzadors APC InRow | 2 × 200W (ventiladors) = 400W |
-| 1 NAS Synology | 1 × 100W = 100W |
-| **TOTAL** | **4.405W** |
-| **Marge de seguretat (+20%)** | **5.286W ≈ 5,3 kW** |
-
-#### Autonomia
-
-- **SAI APC Symmetra LX 16 kVA** amb 2 mòduls de bateries externs (SYBATT).
-- Cada mòdul proporciona ~15 minuts a plena càrrega.
-- Amb 2 mòduls: **~30 minuts d'autonomia** a plena càrrega.
-- Temps suficient per a un apagat ordenat de tots els servidors o per a que el grup electrogen entri en funcionament.
-
-> **Justificació**: 30 minuts és el temps estàndard recomanat per a CPDs de mida mitjana, suficient per a engegar un generador de backup o fer un apagat controlat.
-
----
-
-## 4. Seguretat física
-
-### 4.1 Control d'accés
-
-- **Porta blindada** amb tancament electrònic i obertura per doble factor:
-  1. Targeta RFID (HID iClass)
-  2. PIN de 6 dígits
-- **Registre d'accessos**: tot accés queda registrat amb data, hora i identitat.
-- **Llista blanca**: únicament personal autoritzat explícitament pot accedir.
-- **Accés d'emergència**: clau física en caixa forta al despatx del responsable IT.
-- **Alarma**: activació automàtica si la porta s'obre sense autenticació o queda oberta més de 60 segons.
-
-### 4.2 Videovigilància
-
-- **4 càmeres IP** de 4K (Axis P3245-V) distribuïdes:
-  - 1 a l'entrada de la sala
-  - 1 al corredor fred (davant dels racks)
-  - 1 al corredor calent (darrere dels racks)
-  - 1 a la zona del quadre elèctric i SAI
-- **Enregistrament**: 24/7 amb retenció de 30 dies en NAS dedicat.
-- **Alertes**: detecció de moviment amb notificació per correu electrònic.
-- **Accés remot**: visualització en temps real des del sistema de gestió IT.
-
-```
-┌──────────────────────────────┐
-│  📷 Càmera entrada           │
-│                              │
-│  ┌────────┐   ┌────────┐    │
-│  │📷 Rack1│   │ Rack 2 │📷  │
-│  └────────┘   └────────┘    │
-│                              │
-│         📷 SAI/Elèctric      │
-└──────────────────────────────┘
-```
-
-> 📸 Afegir fotografies de les càmeres instal·lades.
-
-### 4.3 Sistemes de prevenció i extinció d'incendis
-
-- **Detectors de fum** iònics i òptics distribuïts cada 9m² (6 unitats).
-- **Detectors de temperatura** amb alarma a 60°C.
-- **Sistema d'extinció per gas inert** (Inergen IG-541, 52% N₂, 40% Ar, 8% CO₂):
-  - No danya els equips electrònics.
-  - Segur per a persones (reducció d'O₂ fins al 12,5%).
-  - Activació automàtica als 30 segons de detecció confirmada.
-  - Activació manual des del panell de control a l'entrada.
-- **Extintors manuals** CO₂ (2 unitats) per a actuació manual.
-- **Panell de control d'incendis** a l'entrada connectat al sistema central de l'edifici.
-
-### 4.4 Vies d'evacuació
-
-- **Porta principal** (única entrada/sortida): obertura en mode pànic des de l'interior.
-- **Senyalització fotoluminescent** de la ruta d'evacuació.
-- **Il·luminació d'emergència** autònoma amb bateria de 3 hores.
-- **Punt de trobada** designat a l'aparcament exterior, a 50m de l'edifici.
-
-```
-CPD                     Passadís              Sortida
-┌──────┐    ←←←←←←←←←    ┌──────┐   →→→→   ┌──────┐
-│      │ Porta emergència  │      │           │SORTIDA│
-│      │ ──────────────►   │      │           │ 🚪   │
-└──────┘                   └──────┘           └──────┘
-```
-
-> 📸 Afegir plànol de les vies d'evacuació.
-
----
-
-## 5. Seguretat lògica
-
-### 5.1 Restricció d'accés per autorització
-
-- **Autenticació centralitzada** via Samba AD (domini BTIS).
-- **Rols diferenciats**: cada usuari té accés únicament a les dades del seu departament.
-- **Accés SSH** únicament amb clau pública/privada, sense contrasenyes.
-- **Usuari administrador**: `adminitb` (específic del projecte, no l'usuari per defecte).
-- **Sudo sense contrasenya** per a l'usuari adminitb amb registre de totes les accions.
-
-### 5.2 Firewalls — Security Groups AWS
-
-Cada instància EC2 té el seu Security Group específic amb el **principi de mínim privilegi**:
-
-- Les màquines de la subnet privada (samba-ad, mariadb, logs-server) no tenen IP pública i només accepten trànsit intern.
-- Els ports oberts al públic es limiten al mínim necessari (80, 443, 22).
-- El servidor de bases de dades (MariaDB) només accepta connexions des de la VPC interna (port 3306).
-
-Vegeu la documentació completa dels Security Groups a `arquitectura.md`.
-
-### 5.3 Monitoratge
-
-- **Logs centralitzats** via rsyslog al servidor `logs-server-private`, emmagatzemats al EFS.
-- **Dashboard de logs** al portal web (accessible únicament per `admin.itb`).
-- **CloudWatch** d'AWS per a mètriques de CPU, memòria i xarxa de les EC2.
-- **Alertes automàtiques** via SNS quan el disc supera el 80% d'ús.
-- **Logrotate** configurat per rotar logs diàriament i mantenir 7 dies d'historial.
-
-### 5.4 Còpies de seguretat
-
-- **Backup diari automàtic** de MariaDB via event scheduler:
-  ```sql
-  CREATE EVENT ev_backup_diari
-  ON SCHEDULE EVERY 1 DAY
-  DO SELECT * INTO OUTFILE '/var/lib/mysql-files/backup_...'
-  ```
-- **Taula `backups_control`** a MariaDB per registrar l'estat de cada backup.
-- **S3 bucket** `s3-innovatetech-media` per a còpies de seguretat externes.
-- **Snapshots EBS** setmanals de totes les instàncies EC2 via AWS Backup.
-
-### 5.5 RAIDs
-
-Tots els servidors físics del CPD incorporen RAID per garantir la disponibilitat de dades:
-
-| Servidor | RAID | Configuració | Justificació |
-|----------|------|-------------|--------------|
-| Servidors generals | RAID 1 | 2x SSD mirall | Redundància sense pèrdua de rendiment |
-| MariaDB | RAID 10 | 4x SSD | Màxim rendiment + redundància per a BD |
-| NAS backup | RAID 6 | 12x HDD | Tolerància a 2 fallades simultànies |
-
-> **Justificació RAID 1 per servidors**: Còpia exacta en temps real. Si un disc falla, el servidor continua funcionant sense interrupció. El cost és assumible (doble disc) per a màquines de servei.
-
-> **Justificació RAID 10 per MariaDB**: La base de dades és el component més crític. RAID 10 combina la velocitat de RAID 0 (striping) amb la redundància de RAID 1 (mirroring), ideal per a càrregues de lectura/escriptura intenses.
-
----
-
-## 6. Prevenció de riscos laborals
-
-### 6.1 Riscos identificats al CPD
-
-| Risc | Mesura preventiva |
-|------|-------------------|
-| Caigudes per cablejat al terra | Terra tècnic elevat, cablejat canalitzat |
-| Descàrregues elèctriques | Totes les instal·lacions per professional certificat, senyalització de perill elèctric |
-| Soroll dels equips (>85 dB) | EPI obligatori (protectors auditius) per treballs de >30 min al CPD |
-| Temperatura extrema | Sensors i alarmes ambientals, accés limitat a personal format |
-| Incendi | Detectors, extinció automàtica, simulacres anuals |
-| Atrapament a l'interior | Porta obre des de l'interior sense codi, sistema antipànic |
-| Exposició a gasos d'extinció | Protocol d'evacuació previ a activació automàtica (retard 30s) |
-| Sobrecàrrega de racks | Racks certificats per càrrega màxima, distribució de pes documentada |
-
-### 6.2 Mesures generals
-
-- **Formació obligatòria** per a tot el personal que accedeixi al CPD: riscos elèctrics, protocol d'incendis i evacuació.
-- **Treball en solitari prohibit**: sempre mínim 2 persones durant intervencions als equips.
-- **EPIs disponibles** a l'entrada: guants dielèctrics, ulleres de protecció, protectors auditius.
-- **Senyalització** de riscos elèctrics, càrregues pesades i zones de pas restringit.
-- **Simulacres d'evacuació** almenys 1 vegada a l'any.
-- **Registre de manteniment** documentat per a totes les intervencions.
-
----
-
-## 7. Implementació al núvol AWS
-
-### 7.1 Serveis implementats
-
-| Servei | Màquina | IP Privada | Tecnologia |
-|--------|---------|------------|------------|
-| Servei web | web-sftp | 10.0.5.140 | NGINX + PHP + HTTPS |
-| Servei SFTP | web-sftp | 10.0.5.140 | OpenSSH SFTP + Samba AD |
-| Logs centralitzats | logs-server-private | 10.0.133.107 | rsyslog + EFS |
-| Directori actiu | samba-ad | 10.0.141.9 | Samba AD (domini BTIS) |
-| Base de dades | mariadb | 10.0.142.205 | MariaDB 10.11 |
-| Àudio/streaming | multimedia | 10.0.8.36 | Icecast2 + ffmpeg |
-| Vídeo | multimedia | 10.0.8.36 | Jellyfin |
-| Videoconferència | jitsi-meet | 10.0.14.189 | Jitsi Meet (Docker) |
-
-### 7.2 Serveis per màquina separada
-
-Cada servei principal està instal·lat en una instància EC2 diferent, complint el requisit del projecte:
-
-- ✅ Servei web + SFTP → `web-sftp` (excepció permesa)
-- ✅ Logs centralitzats → `logs-server-private`
-- ✅ Directori actiu → `samba-ad`
-- ✅ Base de dades → `mariadb`
-- ✅ Àudio/Vídeo → `multimedia`
-- ✅ Videoconferència → `jitsi-meet`
-- ✅ Automatització → `ansible-controller`
-
-### 7.3 Automatització amb Ansible
-
-Més de 2 màquines configurades amb Ansible:
-
-- ✅ `logs-server-private`: rsyslog receptor + EFS muntat
-- ✅ `web-sftp`: rsyslog client
-- ✅ `mariadb`: MariaDB + rsyslog client
-- ✅ Totes les EC2: rsyslog client via playbook `logs_clients.yml`
-
-### 7.4 Administració amb usuari específic
-
-- Usuari: `adminitb` (no l'usuari per defecte `ubuntu`)
-- Autenticació: clau pública/privada (I.pem, S.pem, T.pem)
-- Accés SSH sense contrasenya
-- Sudo sense contrasenya per a operacions d'administració
+- Usuario: `adminitb` (no el usuario por defecto `ubuntu`)
+- Autenticación: clave pública/privada (I.pem, S.pem, T.pem)
+- Acceso SSH sin contraseña
+- Sudo sin contraseña para operaciones de administración
