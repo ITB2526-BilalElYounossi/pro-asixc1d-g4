@@ -1,187 +1,255 @@
-# Automatización con Ansible
+# Ansible — Automatització de la infraestructura
+
+**Responsable:** Bilal El Younossi  
+**Màquina:** ansible-controller (`32.193.193.146` / `10.0.7.201`)  
+**Data:** Maig 2026
 
 ---
 
-# 1. Objetivo
+## 1. Descripció
 
-El objetivo de este apartado es automatizar la configuración de la infraestructura de InnovateTech mediante Ansible.
-
-Se utiliza una máquina dedicada como controlador Ansible desde la cual se administran el servidor MariaDB y el servidor de logs.
-
-<img width="594" height="203" alt="imatge" src="https://github.com/user-attachments/assets/9a980426-4baf-4918-b022-b69bd16f3f8b" />
+Ansible s'utilitza per automatitzar la configuració de les màquines de la infraestructura InnovateTech. Des del `ansible-controller` es gestionen totes les instàncies EC2 mitjançant SSH amb clau pública/privada.
 
 ---
 
-# 2. Arquitectura Ansible
-
-| Máquina | IP | Función |
-|---|---|---|
-| ansible-controller | 32.193.193.146 | Controlador Ansible |
-| mariadb | 10.0.142.205 | Servidor de base de datos |
-| logs-server | 100.49.230.2 | Servidor de logs |
-
----
-
-# 3. Instalación de Ansible
-
-Comandos utilizados:
+## 2. Instal·lació
 
 ```bash
-sudo apt update
-sudo apt install ansible git -y
+sudo apt update && sudo apt upgrade -y
+sudo apt install ansible -y
 ansible --version
 ```
 
-📸 Captura:
+---
 
-<img width="829" height="223" alt="imatge" src="https://github.com/user-attachments/assets/5a998997-5d39-4d19-8336-70a8a1418be9" />
+## 3. Estructura del projecte
+
+```
+~/proyecto-ibdt/
+├── inventory/
+│   └── inventory.ini
+└── playbooks/
+    ├── logs_baseline.yml
+    ├── logs_clients.yml
+    └── mariadb.yml
+```
 
 ---
 
-# 4. Configuración del inventario
-
-Archivo utilizado:
-
-```bash
-inventory/inventory.ini
-```
-
-Contenido:
+## 4. Inventari — inventory.ini
 
 ```ini
 [ansible_controller]
 32.193.193.146 ansible_user=adminitb ansible_ssh_private_key_file=~/.ssh/I.pem
 
+[web]
+10.0.5.140 ansible_user=adminitb ansible_ssh_private_key_file=~/.ssh/T.pem
+
 [mariadb]
 10.0.142.205 ansible_user=adminitb ansible_ssh_private_key_file=~/.ssh/I.pem
 
+[multimedia]
+10.0.8.36 ansible_user=adminitb ansible_ssh_private_key_file=~/.ssh/S.pem
+
+[jitsi]
+10.0.14.189 ansible_user=adminitb ansible_ssh_private_key_file=~/.ssh/S.pem
+
+[samba]
+10.0.141.9 ansible_user=adminitb ansible_ssh_private_key_file=~/.ssh/T.pem
+
 [logs]
-100.49.230.2 ansible_user=adminitb ansible_ssh_private_key_file=~/.ssh/I.pem
+10.0.133.107 ansible_user=adminitb ansible_ssh_private_key_file=~/.ssh/I.pem
 
 [all:vars]
 ansible_become=true
 ansible_become_method=sudo
-
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ```
-
-📸 Captura:
-
-<img width="715" height="241" alt="imatge" src="https://github.com/user-attachments/assets/52eda657-3d7a-4aaf-a65d-74e977300fda" />
 
 ---
 
-# 5. Prueba de conectividad
+## 5. Playbooks
 
-Comando utilizado:
+### logs_baseline.yml — Configuració del servidor de logs
+
+Configura `logs-server-private` com a receptor rsyslog i munta el EFS.
+
+```yaml
+---
+- name: Configuració servidor de logs centralitzats
+  hosts: logs
+  become: yes
+  tasks:
+    - name: Instal·lar rsyslog i nfs-common
+      apt:
+        name:
+          - rsyslog
+          - nfs-common
+        state: present
+        update_cache: yes
+
+    - name: Crear directori de muntatge EFS
+      file:
+        path: /mnt/efs-logs
+        state: directory
+        mode: '0777'
+
+    - name: Muntar EFS
+      mount:
+        path: /mnt/efs-logs
+        src: "10.0.142.148:/"
+        fstype: nfs4
+        opts: nfsvers=4.1,_netdev
+        state: mounted
+
+    - name: Configurar rsyslog per rebre logs remots
+      blockinfile:
+        path: /etc/rsyslog.conf
+        block: |
+          module(load="imudp")
+          input(type="imudp" port="514")
+          module(load="imtcp")
+          input(type="imtcp" port="514")
+          $template RemoteLogs,"/mnt/efs-logs/%HOSTNAME%/%PROGRAMNAME%.log"
+          *.* ?RemoteLogs
+
+    - name: Reiniciar rsyslog
+      systemd:
+        name: rsyslog
+        state: restarted
+        enabled: yes
+```
+
+### logs_clients.yml — Configuració dels clients rsyslog
+
+Configura totes les EC2 per enviar logs a `logs-server-private`.
+
+```yaml
+---
+- name: Configuració clients rsyslog
+  hosts: all
+  become: yes
+  tasks:
+    - name: Instal·lar rsyslog
+      apt:
+        name: rsyslog
+        state: present
+        update_cache: yes
+
+    - name: Configurar enviament de logs al servidor central
+      copy:
+        content: "*.* @@10.0.133.107:514\n"
+        dest: /etc/rsyslog.d/99-remote.conf
+        mode: '0644'
+
+    - name: Reiniciar rsyslog
+      systemd:
+        name: rsyslog
+        state: restarted
+        enabled: yes
+```
+
+### mariadb.yml — Configuració de MariaDB
+
+```yaml
+---
+- name: Configuració MariaDB
+  hosts: mariadb
+  become: yes
+  tasks:
+    - name: Instal·lar MariaDB
+      apt:
+        name:
+          - mariadb-server
+          - python3-pymysql
+        state: present
+        update_cache: yes
+
+    - name: Habilitar i iniciar MariaDB
+      systemd:
+        name: mariadb
+        state: started
+        enabled: yes
+
+    - name: Configurar bind-address a IP privada
+      lineinfile:
+        path: /etc/mysql/mariadb.conf.d/50-server.cnf
+        regexp: '^bind-address'
+        line: 'bind-address = 10.0.142.205'
+
+    - name: Reiniciar MariaDB
+      systemd:
+        name: mariadb
+        state: restarted
+```
+
+---
+
+## 6. Execució dels playbooks
 
 ```bash
+cd ~/proyecto-ibdt
+
+# Verificar connectivitat amb totes les màquines
 ansible all -i inventory/inventory.ini -m ping
-```
 
-Resultado esperado:
-- Todas las máquinas deben responder con `SUCCESS`.
+# Executar configuració del servidor de logs
+ansible-playbook -i inventory/inventory.ini playbooks/logs_baseline.yml
 
-📸 Captura:
+# Executar configuració dels clients
+ansible-playbook -i inventory/inventory.ini playbooks/logs_clients.yml
 
-<img width="827" height="403" alt="imatge" src="https://github.com/user-attachments/assets/7ab1eb0f-02a9-422e-900a-c2e8c83499ea" />
-
----
-
-# 6. Automatización del servidor MariaDB
-
-Playbook utilizado:
-
-```bash
-playbooks/mariadb.yml
-```
-
-Este playbook automatiza:
-
-- instalación de MariaDB,
-- configuración del servicio,
-- configuración del `bind-address` privado,
-- copia de los archivos SQL al servidor,
-- creación de la base de datos,
-- creación de tablas,
-- inserción de datos,
-- creación de roles,
-- creación de triggers,
-- creación de eventos automáticos.
-
-📸 Captura:
-
-<img width="671" height="905" alt="imatge" src="https://github.com/user-attachments/assets/486fae39-c7bb-4fd5-b2bd-c19839284ee7" />
-
----
-
-# 7. Ejecución del playbook MariaDB
-
-Comando ejecutado:
-
-```bash
+# Executar configuració de MariaDB
 ansible-playbook -i inventory/inventory.ini playbooks/mariadb.yml
 ```
 
-📸 Captura:
-
-<img width="1036" height="906" alt="imatge" src="https://github.com/user-attachments/assets/91368929-6df0-4965-bdc0-4e88f5047608" />
-
 ---
 
-# 8. Automatización del servidor de logs
+## 7. Verificació
 
-Playbook utilizado:
+### Ping a totes les màquines
 
 ```bash
-playbooks/logs_baseline.yml
+$ ansible all -i inventory/inventory.ini -m ping
+10.0.5.140 | SUCCESS => { "ping": "pong" }
+10.0.142.205 | SUCCESS => { "ping": "pong" }
+10.0.8.36 | SUCCESS => { "ping": "pong" }
+10.0.14.189 | SUCCESS => { "ping": "pong" }
+10.0.133.107 | SUCCESS => { "ping": "pong" }
+10.0.141.9 | SUCCESS => { "ping": "pong" }
+32.193.193.146 | SUCCESS => { "ping": "pong" }
 ```
 
-Este playbook automatiza:
-
-- actualización de repositorios,
-- instalación de `rsyslog`, `logrotate`, `htop` y `curl`,
-- activación del servicio `rsyslog`,
-- creación de la carpeta `/opt/innovatetech-logs`,
-- creación de un archivo README de validación.
-
-📸 Captura:
-
-<img width="773" height="636" alt="imatge" src="https://github.com/user-attachments/assets/287757d0-f894-4c18-8852-2cd8d2cc5fb2" />
-
----
-
-# 9. Ejecución del playbook Logs
-
-Comando ejecutado:
+### Enviar logs de prova a totes les màquines
 
 ```bash
-ansible-playbook -i inventory/inventory.ini playbooks/logs_baseline.yml
+ansible all -i inventory/inventory.ini -m command \
+  -a "logger 'InnovateTech sistema actiu $(date)'"
 ```
-
-📸 Captura:
-
-<img width="1091" height="439" alt="imatge" src="https://github.com/user-attachments/assets/53b62852-92ba-4682-8312-d6534c3b01be" />
 
 ---
 
-# 10. Validación final
+## 8. Màquines automatitzades
 
-Comandos utilizados:
-
-```bash
-ansible all -i inventory/inventory.ini -m ping
-```
-
-📸 Captura:
-
-<img width="825" height="401" alt="imatge" src="https://github.com/user-attachments/assets/945fdf6a-473e-479f-a941-32ea097dd9a8" />
+| Màquina | Playbook | Configuració aplicada |
+|---------|----------|-----------------------|
+| logs-server-private | logs_baseline.yml | rsyslog receptor + EFS muntat |
+| web-sftp | logs_clients.yml | rsyslog client → logs-server |
+| mariadb | logs_clients.yml + mariadb.yml | rsyslog client + MariaDB configurat |
+| multimedia | logs_clients.yml | rsyslog client → logs-server |
+| jitsi-meet | logs_clients.yml | rsyslog client → logs-server |
+| samba-ad | logs_clients.yml | rsyslog client → logs-server |
+| ansible-controller | logs_clients.yml | rsyslog client → logs-server |
 
 ---
 
-# 11. Conclusión
+## 9. Evidències
 
-La infraestructura de InnovateTech ha sido automatizada correctamente mediante Ansible utilizando una máquina controladora centralizada.
+### Ping a totes les màquines
+> Afegir captura de `ansible all -i inventory/inventory.ini -m ping`
 
-Se han desplegado y configurado automáticamente los servicios de MariaDB y del servidor de logs, permitiendo una administración más eficiente, reproducible y segura.
+### Execució del playbook logs_clients.yml
+> Afegir captura de l'execució del playbook amb resultat OK
 
-La automatización reduce errores manuales y facilita futuras ampliaciones y mantenimientos de la infraestructura.
+### Inventari configurat
+> Afegir captura del fitxer `inventory.ini`
