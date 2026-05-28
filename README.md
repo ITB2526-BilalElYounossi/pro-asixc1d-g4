@@ -1,27 +1,27 @@
-# Projecte Transversal ASIXc1 — InnovateTech CPD
+# Proyecto Transversal ASIXc1 — InnovateTech CPD
 
-> Disseny i implementació d'un Centre de Processament de Dades (CPD) al núvol AWS per a l'empresa **InnovateTech**, incloent serveis multimèdia, base de dades, directori actiu i gestió centralitzada de logs.
+> Diseño e implementación de un Centro de Procesamiento de Datos (CPD) en la nube AWS para la empresa **InnovateTech**, incluyendo servicios multimedia, base de datos, directorio activo y gestión centralizada de logs.
 
-**Grup:** TIBS (Taylor · Izan · Bilal · Serghei)  
-**Cicle:** CFGS Administració de Sistemes Informàtics en Xarxa  
-**Centre:** Institut Tecnològic de Barcelona  
-**Curs:** 2025–2026  
-**Lliurament:** 28 de maig de 2026
+**Grupo:** TIBS (Taylor · Izan · Bilal · Serghei)  
+**Ciclo:** CFGS Administración de Sistemas Informáticos en Red  
+**Centro:** Institut Tecnològic de Barcelona  
+**Curso:** 2025–2026  
+**Entrega:** 28 de mayo de 2026
 
 ---
 
-## Descripció del projecte
+## Descripción del proyecto
 
-InnovateTech és una empresa dedicada a la provisió de serveis tecnològics que necessita modernitzar la seva capacitat operativa. Aquest projecte dissenya i implementa un CPD eficient al núvol AWS que integra:
+InnovateTech es una empresa dedicada a la provisión de servicios tecnológicos que necesita modernizar su capacidad operativa. Este proyecto diseña e implementa un CPD eficiente en la nube AWS que integra:
 
-- Distribució de continguts d'àudio i vídeo en streaming (ràdio en directe + vídeo sota demanda)
-- Canal de vídeo en directe (live streaming)
-- Sistema de videoconferències per a comunicació interna
-- Base de dades per gestionar personal, comunicacions i activitat
-- Directori Actiu per centralitzar la gestió d'usuaris
-- Servidor web (intranet) autenticat contra el Directori Actiu
-- Gestió centralitzada de logs de tots els servidors via rsyslog + EFS
-- Configuració automatitzada amb Ansible
+- Distribución de contenidos de audio y vídeo en streaming (radio en directo + vídeo bajo demanda)
+- Canal de vídeo en directo (live streaming)
+- Sistema de videoconferencias para comunicación interna
+- Base de datos para gestionar personal, comunicaciones y actividad
+- Directorio Activo para centralizar la gestión de usuarios
+- Servidor web (intranet) autenticado contra el Directorio Activo
+- Gestión centralizada de logs de todos los servidores via rsyslog + EFS
+- Configuración automatizada con Ansible
 
 ---
 
@@ -31,136 +31,135 @@ InnovateTech és una empresa dedicada a la provisió de serveis tecnològics que
 
 ---
 
-## Equip i responsabilitats
+## Equipo y responsabilidades
 
-| Membre | Rol | Màquines |
-|--------|-----|----------|
+| Miembro | Rol | Máquinas |
+|---------|-----|----------|
 | **Bilal** | Infraestructura AWS + Logs + Ansible | logs-server-private |
-| **Izan** | Base de dades + Ansible | mariadb + ansible-controller |
-| **Taylor** | Web + SFTP + Directori Actiu | web-sftp + samba-ad |
-| **Serghei** | Multimèdia + Videoconferències | multimedia + jitsi-meet |
+| **Izan** | Base de datos + Ansible | mariadb + ansible-controller |
+| **Taylor** | Web + SFTP + Directorio Activo | web-sftp + samba-ad |
+| **Serghei** | Multimedia + Videoconferencias | multimedia + jitsi-meet |
 
 ---
 
-## Màquines i serveis
+## Máquinas y servicios
 
-| Màquina | IP Pública | IP Privada | Serveis | Subnet |
-|---------|-----------|------------|---------|--------|
+| Máquina | IP Pública | IP Privada | Servicios | Subnet |
+|---------|-----------|------------|-----------|--------|
 | web-sftp | 52.1.67.249 | 10.0.5.140 | NGINX + PHP + SFTP + Portal web | Pública |
 | multimedia | 32.198.236.17 | 10.0.8.36 | Jellyfin + Icecast2 + Live stream | Pública |
 | jitsi-meet | 3.219.249.6 | 10.0.14.189 | Jitsi Meet (Docker) | Pública |
 | ansible-controller | 32.193.193.146 | 10.0.7.201 | Ansible | Pública |
-| samba-ad | — | 10.0.141.9 | Samba AD (domini BTIS) | Privada |
+| samba-ad | — | 10.0.141.9 | Samba AD (dominio BTIS) | Privada |
 | mariadb | — | 10.0.142.205 | MariaDB 10.11 | Privada |
 | logs-server-private | — | 10.0.133.107 | Rsyslog + EFS | Privada |
 
 ---
 
-## Stack tecnològic
+## Stack tecnológico
 
-| Component | Tecnologia | Funció |
-|-----------|-----------|--------|
+| Componente | Tecnología | Función |
+|------------|-----------|---------|
 | Cloud | AWS (VPC, EC2, ALB, EFS, S3) | Infraestructura |
-| SO | Ubuntu 24.04 LTS | Totes les instàncies |
-| Directori Actiu | Samba AD | Gestió d'usuaris (domini BTIS) |
+| SO | Ubuntu 24.04 LTS | Todas las instancias |
+| Directorio Activo | Samba AD | Gestión de usuarios (dominio BTIS) |
 | Servidor web | NGINX + PHP 8.3 | Intranet InnovateTech |
-| Transferència fitxers | SFTP + AD auth | Accés fitxers per usuaris |
-| Vídeo sota demanda | Jellyfin | Distribució vídeo |
-| Vídeo en directe | ffmpeg + HLS + NGINX | Canal live streaming |
-| Ràdio en directe | Icecast2 + ffmpeg | Retransmissió RNE Radio 1 |
-| Videoconferències | Jitsi Meet (Docker) | Comunicació interna |
-| Base de dades | MariaDB 10.11 | Gestió dades empresa |
-| Automatització | Ansible | Configuració servidors |
-| Logs centralitzats | Rsyslog + EFS | Monitoratge en temps real |
-| Control de versions | Git + GitHub | Documentació i codi |
+| Transferencia ficheros | SFTP + AD auth | Acceso ficheros por usuarios |
+| Vídeo bajo demanda | Jellyfin | Distribución vídeo |
+| Vídeo en directo | ffmpeg + HLS + NGINX | Canal live streaming |
+| Radio en directo | Icecast2 + ffmpeg | Retransmisión RNE Radio 1 |
+| Videoconferencias | Jitsi Meet (Docker) | Comunicación interna |
+| Base de datos | MariaDB 10.11 | Gestión datos empresa |
+| Automatización | Ansible | Configuración servidores |
+| Logs centralizados | Rsyslog + EFS | Monitorización en tiempo real |
+| Control de versiones | Git + GitHub | Documentación y código |
 
 ---
 
-## Seguretat
+## Seguridad
 
-| Capa | Mesures aplicades |
+| Capa | Medidas aplicadas |
 |------|------------------|
-| Xarxa | Subnet privada per BD, AD i logs. Security Groups per servei |
-| Accés SSH | Clau pública/privada, usuari `adminitb` dedicat, sense contrasenya |
+| Red | Subnet privada para BD, AD y logs. Security Groups por servicio |
+| Acceso SSH | Clave pública/privada, usuario `adminitb` dedicado, sin contraseña |
 | Web | HTTPS, X-Frame-Options, X-XSS-Protection, X-Content-Type-Options |
-| BD | Rols diferenciats, bind-address privat, prepared statements, triggers |
-| Logs | Rsyslog centralitzat → EFS, logrotate diari, dashboard admin |
-| AWS | ALB davant web, NAT Gateway per subnet privada |
+| BD | Roles diferenciados, bind-address privado, prepared statements, triggers |
+| Logs | Rsyslog centralizado → EFS, logrotate diario, dashboard admin |
+| AWS | ALB delante de web, NAT Gateway para subnet privada |
 
 ---
 
-## Estructura del repositori
+## Estructura del repositorio
 
 ```
 Proyecto-Transversal-TIBS/
 ├── README.md
 ├── docs/
 │   ├── 01-cpd/
-│   │   └── cpd.md                  → Proposta CPD físic (Bilal)
+│   │   └── cpd.md                  → Propuesta CPD físico (Bilal)
 │   ├── 02-aws/
 │   │   ├── arquitectura.md         → VPC, subnets, EC2, SG (Bilal)
-│   │   ├── ansible.md              → Playbooks, inventari (Bilal)
+│   │   ├── ansible.md              → Playbooks, inventario (Bilal)
 │   │   ├── logs.md                 → Rsyslog + EFS (Bilal)
-│   │   ├── samba-ad.md             → Directori Actiu (Taylor)
+│   │   ├── samba-ad.md             → Directorio Activo (Taylor)
 │   │   └── web-sftp.md             → NGINX, PHP, SFTP (Taylor)
 │   ├── 03-audio-video/
-│   │   ├── icecast-radio.md        → Ràdio en directe (Serghei)
-│   │   ├── jellyfin.md             → Vídeo sota demanda (Serghei)
-│   │   ├── live-streaming.md       → Canal vídeo en directe (Serghei)
-│   │   └── jitsi.md                → Videoconferències (Serghei)
+│   │   ├── icecast-radio.md        → Radio en directo (Serghei)
+│   │   ├── jellyfin.md             → Vídeo bajo demanda (Serghei)
+│   │   ├── live-streaming.md       → Canal vídeo en directo (Serghei)
+│   │   └── jitsi.md                → Videoconferencias (Serghei)
 │   └── 04-BaseDeDades/
-│       ├── disseny-er.md           → Model E/R (Izan)
-│       ├── usuaris-rols.md         → Rols i permisos (Izan)
-│       └── triggers-events.md      → Triggers i backups (Izan)
+│       ├── disseny-er.md           → Modelo E/R (Izan)
+│       ├── usuaris-rols.md         → Roles y permisos (Izan)
+│       └── triggers-events.md      → Triggers y backups (Izan)
 ├── infrastructure/
 │   └── aws/
 │       └── vpc.md
 ├── media/
-│   ├── aws/                        → Captures infraestructura
-│   └── cpd/                        → Imatges CPD físic
-├── tests/
-│   └── test-plan.md
-└── infrastructure/aws/vpc.md
+│   ├── aws/                        → Capturas infraestructura
+│   └── cpd/                        → Imágenes CPD físico
+└── tests/
+    └── test-plan.md
 ```
 
 ---
 
-## Índex de documentació
+## Índice de documentación
 
-| Document | Responsable | Estat |
-|----------|-------------|-------|
-| [Proposta CPD](docs/01-cpd/cpd.md) | Bilal | ✅ |
+| Documento | Responsable | Estado |
+|-----------|-------------|--------|
+| [Propuesta CPD](docs/01-cpd/cpd.md) | Bilal | ✅ |
 | [Infraestructura AWS](docs/02-aws/arquitectura.md) | Bilal | ✅ |
 | [Ansible](docs/02-aws/ansible.md) | Bilal | ✅ |
-| [Logs centralitzats](docs/02-aws/logs.md) | Bilal | ✅ |
+| [Logs centralizados](docs/02-aws/logs.md) | Bilal | ✅ |
 | [Samba AD](docs/02-aws/samba-ad.md) | Taylor | 🔄 |
 | [Web + SFTP](docs/02-aws/web-sftp.md) | Taylor | 🔄 |
-| [Ràdio Icecast2](docs/03-audio-video/icecast-radio.md) | Serghei | 🔄 |
+| [Radio Icecast2](docs/03-audio-video/icecast-radio.md) | Serghei | 🔄 |
 | [Jellyfin VOD](docs/03-audio-video/jellyfin.md) | Serghei | 🔄 |
 | [Live Streaming](docs/03-audio-video/live-streaming.md) | Serghei | 🔄 |
 | [Jitsi Meet](docs/03-audio-video/jitsi.md) | Serghei | 🔄 |
-| [Base de dades](docs/04-BaseDeDades/disseny-er.md) | Izan | 🔄 |
-| [Usuaris i rols](docs/04-BaseDeDades/usuaris-rols.md) | Izan | 🔄 |
-| [Triggers i events](docs/04-BaseDeDades/triggers-events.md) | Izan | 🔄 |
+| [Base de datos](docs/04-BaseDeDades/disseny-er.md) | Izan | 🔄 |
+| [Usuarios y roles](docs/04-BaseDeDades/usuaris-rols.md) | Izan | 🔄 |
+| [Triggers y eventos](docs/04-BaseDeDades/triggers-events.md) | Izan | 🔄 |
 
 ---
 
-## Proves de funcionament
+## Pruebas de funcionamiento
 
-| Prova | Resultat |
-|-------|---------|
-| SSH amb clau pública a totes les màquines | ✅ |
-| Connectivitat entre subnets | ✅ |
+| Prueba | Resultado |
+|--------|----------|
+| SSH con clave pública a todas las máquinas | ✅ |
+| Conectividad entre subnets | ✅ |
 | NAT Gateway subnet privada | ✅ |
-| Logs centralitzats (7 màquines → EFS) | ✅ |
-| Dashboard logs al portal web | ✅ |
-| Ansible ping totes les màquines | ✅ |
+| Logs centralizados (7 máquinas → EFS) | ✅ |
+| Dashboard logs en el portal web | ✅ |
+| Ansible ping todas las máquinas | ✅ |
 | Ansible playbooks (logs_baseline, logs_clients, mariadb) | ✅ |
-| Portal web amb autenticació Samba AD | ✅ |
-| HTTPS + certificat SSL | ✅ |
-| Ràdio en directe (RNE Radio 1 via Icecast2) | ✅ |
-| Jellyfin vídeo sota demanda | ✅ |
-| Jitsi Meet videoconferència | ✅ |
-| MariaDB rols i permisos | ✅ |
-| SFTP autenticat contra AD | ✅ |
-| Live streaming vídeo en directe | 🔄 En curs |
+| Portal web con autenticación Samba AD | ✅ |
+| HTTPS + certificado SSL | ✅ |
+| Radio en directo (RNE Radio 1 via Icecast2) | ✅ |
+| Jellyfin vídeo bajo demanda | ✅ |
+| Jitsi Meet videoconferencia | ✅ |
+| MariaDB roles y permisos | ✅ |
+| SFTP autenticado contra AD | ✅ |
+| Live streaming vídeo en directo | 🔄 En curso |
