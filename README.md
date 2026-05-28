@@ -28,7 +28,6 @@ InnovateTech és una empresa dedicada a la provisió de serveis tecnològics que
 ## Arquitectura AWS
 
 ![Arquitectura AWS InnovateTech](https://github.com/user-attachments/assets/4db7655e-f0b4-493a-bdd5-90f19d86825d)
-```
 
 ---
 
