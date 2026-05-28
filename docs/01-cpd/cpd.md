@@ -56,23 +56,8 @@ El sistema de climatización es crítico para mantener los equipos en condicione
 - **Sensores ambientales** en 3 puntos de la sala: entrada, centro y salida.
 - **Sistema de filtrado HEPA** para eliminar partículas y polvo.
 
-```
-        PASILLO FRÍO           PASILLO CALIENTE
-        ↓ Aire frío ↓          ↑ Aire caliente ↑
-   ┌──────────────────────────────────────────┐
-   │  [Rack 1] →→→ | ←←← [Rack 2]            │
-   │  FRONT          FRONT                    │
-   │  ↑ Aire frío ↑  ↑ Aire frío ↑            │
-   │                                          │
-   │  [A/C 1]              [A/C 2 redundante] │
-   └──────────────────────────────────────────┘
-         ↑ Suelo técnico (aire frío)
-```
+<img width="1027" height="562" alt="image" src="https://github.com/user-attachments/assets/5f36ec8f-5f60-4d06-bc43-443c36d1916d" />
 
-<img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/144b139a-b842-403d-9adb-c62d864d0e1b" />
-
-
----
 
 ### 1.3 Medidas para dificultar la identificación de la sala
 
@@ -110,8 +95,10 @@ SUELO TÉCNICO
 │   └── Cables SAI (negro)
 └── Canal central: Conexiones entre racks
 ```
+<img width="1027" height="562" alt="image" src="https://github.com/user-attachments/assets/b24b6b09-8aa1-4838-9151-798630e26db8" />
+<img width="1027" height="562" alt="image" src="https://github.com/user-attachments/assets/00514efd-4aca-4f3f-9fa3-cebfc3fd0fb5" />
 
-<img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/f6b9e0f9-b4f6-429e-9096-9fb10d2e87fa" />
+
 
 
 ---
@@ -146,30 +133,12 @@ SUELO TÉCNICO
 ```
 
 ---
-<img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/6cb089bf-5df1-4fa9-bd94-df796de55dab" />
+<img width="1027" height="562" alt="image" src="https://github.com/user-attachments/assets/79e3bf16-0281-4c17-b632-4fd60e759593" />
 
 
 ### 1.6 Plano de la sala CPD
 
-```
-         10 metros
-    ┌──────────────────────────────┐
-    │  [A/C 1]         [A/C 2]    │ 5m
-    │                              │
-    │  ┌────────┐   ┌────────┐    │
-    │  │ RACK 1 │   │ RACK 2 │    │
-    │  │        │   │        │    │
-    │  │ 42U    │   │ 42U    │    │
-    │  └────────┘   └────────┘    │
-    │                              │
-    │  [SAI 1]         [SAI 2]    │
-    │                              │
-    │              ← PUERTA →     │
-    └──────────────────────────────┘
-    [Panel eléctrico]  [Extintores]
-```
-
-<img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/ac33fbc7-33b7-4268-9c00-a0471a439581" />
+<img width="1027" height="562" alt="image" src="https://github.com/user-attachments/assets/3dd05606-9795-4cd5-a16e-a1d4a66784aa" />
 
 
 ---
@@ -203,32 +172,8 @@ SUELO TÉCNICO
 | 15-16 | Servidor de copias de seguridad |
 | 40-42 | PDU vertical (APC AP8959) |
 
-```
-RACK 1                    RACK 2
-┌──────────┐              ┌──────────┐
-│ Patch    │              │ Patch    │ 1U
-│ Panel    │              │ Panel    │ 2U
-├──────────┤              ├──────────┤
-│ Switch   │              │ Switch   │ 3U
-│ Core     │              │ Gestión  │ 4U
-├──────────┤              ├──────────┤
-│ Firewall │              │ MariaDB  │ 5-7U
-├──────────┤              ├──────────┤
-│ web-sftp │              │ Logs     │ 8-10U
-├──────────┤              ├──────────┤
-│Multimedia│              │ NAS      │ 11-15U
-├──────────┤              ├──────────┤
-│  Jitsi   │              │ Backup   │ 16-17U
-├──────────┤              ├──────────┤
-│ Ansible  │              │          │
-├──────────┤              │ (libre)  │
-│ Samba AD │              │          │
-├──────────┤              ├──────────┤
-│   PDU    │              │   PDU    │ 40-42U
-└──────────┘              └──────────┘
-```
+<img width="1027" height="562" alt="image" src="https://github.com/user-attachments/assets/9be05d7d-6d15-4c8b-83b8-c57fe79dd965" />
 
-<img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/e47db734-3286-4723-bb8c-cf0767614aa1" />
 
 
 ---
@@ -272,23 +217,8 @@ RACK 1                    RACK 2
 - Cada rack dispone de **2 PDUs** (Power Distribution Units) conectadas a líneas eléctricas diferentes.
 - Todos los servidores tienen **2 fuentes de alimentación** redundantes (PSU1 → Línea A, PSU2 → Línea B).
 
-```
-Red eléctrica
-      │
-  ┌───┴───┐
-  │  SAI  │  (APC Symmetra LX 16 kVA)
-  └───┬───┘
-      │
-  ┌───┴─────────┐
-  │             │
-Línea A      Línea B
-  │             │
-PDU Rack1A  PDU Rack1B    PDU Rack2A  PDU Rack2B
-  │             │             │           │
-PSU1        PSU2          PSU1        PSU2
-(todos los servidores)
-```
-<img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/9e007040-56da-4529-a865-0dd081987a1c" />
+<img width="1027" height="562" alt="image" src="https://github.com/user-attachments/assets/c2989b78-186b-4723-95ed-050f92c4cc8a" />
+
 
 ### 3.2 SAI — Sistemas de Alimentación Ininterrumpida
 
@@ -342,19 +272,8 @@ PSU1        PSU2          PSU1        PSU2
 - **Alertas**: detección de movimiento con notificación por correo electrónico.
 - **Acceso remoto**: visualización en tiempo real desde el sistema de gestión IT.
 
-```
-┌──────────────────────────────┐
-│  📷 Cámara entrada           │
-│                              │
-│  ┌────────┐   ┌────────┐    │
-│  │📷 Rack1│   │ Rack 2 │📷  │
-│  └────────┘   └────────┘    │
-│                              │
-│         📷 SAI/Eléctrico     │
-└──────────────────────────────┘
-```
+<img width="1033" height="566" alt="image" src="https://github.com/user-attachments/assets/3b2202c3-286e-4e2d-88fa-03696e127476" />
 
-<img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/f8049044-f053-489d-82cd-58902b14e06d" />
 
 
 ### 4.3 Sistemas de prevención y extinción de incendios
@@ -376,17 +295,8 @@ PSU1        PSU2          PSU1        PSU2
 - **Iluminación de emergencia** autónoma con batería de 3 horas.
 - **Punto de encuentro** designado en el aparcamiento exterior, a 50m del edificio.
 
-```
-CPD                    Pasillo               Salida
-┌──────┐   ←←←←←←←←←   ┌──────┐   →→→→   ┌──────┐
-│      │ Puerta emerg.   │      │           │SALIDA│
-│      │ ─────────────►  │      │           │ 🚪   │
-└──────┘                 └──────┘           └──────┘
-```
-<img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/990ba2ba-9639-40cb-a28e-d978b384a8cd" />
+<img width="1099" height="727" alt="image" src="https://github.com/user-attachments/assets/aac70c1f-d941-4ced-b3a8-6de3af722d00" />
 
-
----
 
 ## 5. Seguridad lógica
 
