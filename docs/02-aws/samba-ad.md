@@ -29,6 +29,7 @@ El dominio se utiliza como base para autenticar usuarios desde otros servicios d
 ## 3. Preparación del servidor Samba AD
 Antes de configurar Samba AD, se preparó la máquina que actuaría como controlador de dominio. Esta máquina forma parte de la infraestructura AWS del proyecto y se encuentra en la red privada.
 Se configuró el nombre del servidor para identificarlo correctamente dentro del dominio:
+
 <img width="866" height="228" alt="{DE21759E-89AA-4049-A844-64E038C1EB92}" src="https://github.com/user-attachments/assets/0ce62a2f-c3be-40f1-87f7-3c873f415e9b" />
 
 ## 4. Instalación de paquetes necesarios
@@ -51,7 +52,9 @@ sudo apt install -y samba krb5-user winbind smbclient dnsutils acl attr
 ```
 **Evidencia:** captura donde se comprueba que Samba, Kerberos y las herramientas de administración del dominio están instaladas correctamente en el servidor `samba-ad`.
 
+
 <img width="273" height="95" alt="Comprobación herramientas Samba y Kerberos" src="https://github.com/user-attachments/assets/2050b02e-8e3e-4ba3-aad6-d940fbfaa2e2" />
+
 
 <img width="699" height="214" alt="Servicio Samba AD activo" src="https://github.com/user-attachments/assets/2191067c-0811-477d-8ba4-d28f99169542" />
 
@@ -74,7 +77,7 @@ sudo samba-tool domain provision \
   --use-rfc2307 \
   --interactive
 ```
-Durante el proceso interactivo se indicaron los datos del dominio, como el realm, el dominio DNS, el nombre NetBIOS y la contraseña del usuario administrador del dominio.
+Durante el proceso se indicaron los datos del dominio, como el realm, el dominio DNS, el nombre NetBIOS y la contraseña del usuario administrador del dominio.
 
 Este proceso genera la configuración principal de Samba AD y crea la base interna del dominio.
 
