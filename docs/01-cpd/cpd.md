@@ -33,22 +33,7 @@ La primera planta interior ha sido elegida tras evaluar las alternativas:
 La sala ocupa **50 m²** con dimensiones de 10m x 5m y altura libre de 3m (2,5m útiles con suelo técnico y techo técnico).
 
 ```
-┌─────────────────────────────────────────────┐
-│            PRIMERA PLANTA                   │
-│                                             │
-│  Oficinas   ┌──────────────┐   Oficinas     │
-│             │   SALA CPD   │                │
-│             │   (50m²)     │ ← Patio inter. │
-│             │  Rack1 Rack2 │                │
-│             │  [A/C] [A/C] │                │
-│             └──────────────┘                │
-│                   ↑                         │
-│            Acceso controlado                │
-│            (puerta blindada)                │
-└─────────────────────────────────────────────┘
-```
-
-><img width="1022" height="557" alt="image" src="https://github.com/user-attachments/assets/8943bcc8-481e-4d38-9488-56689068c736" />
+<img width="776" height="781" alt="image" src="https://github.com/user-attachments/assets/e74625c3-d226-4246-87aa-21b699a34f19" />
 
 
 ---
