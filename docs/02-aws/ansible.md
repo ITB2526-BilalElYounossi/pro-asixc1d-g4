@@ -1,18 +1,18 @@
-# Ansible — Automatització de la infraestructura
+# Ansible — Automatización de la infraestructura
 
-**Responsable:** Bilal El Younossi i Izan Velázquez Cerrato
-**Màquina:** ansible-controller (`32.193.193.146` / `10.0.7.201`)  
-**Data:** Maig 2026
-
----
-
-## 1. Descripció
-
-Ansible s'utilitza per automatitzar la configuració de les màquines de la infraestructura InnovateTech. Des del `ansible-controller` es gestionen totes les instàncies EC2 mitjançant SSH amb clau pública/privada.
+**Responsable:** Bilal El Younossi e Izan Velázquez Cerrato  
+**Máquina:** ansible-controller (`32.193.193.146` / `10.0.7.201`)  
+**Fecha:** Mayo 2026
 
 ---
 
-## 2. Instal·lació
+## 1. Descripción
+
+Ansible se utiliza para automatizar la configuración de las máquinas de la infraestructura InnovateTech. Desde el `ansible-controller` se gestionan todas las instancias EC2 mediante SSH con clave pública/privada.
+
+---
+
+## 2. Instalación
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -22,7 +22,7 @@ ansible --version
 
 ---
 
-## 3. Estructura del projecte
+## 3. Estructura del proyecto
 
 ```
 ~/proyecto-ibdt/
@@ -36,7 +36,7 @@ ansible --version
 
 ---
 
-## 4. Inventari — inventory.ini
+## 4. Inventario — inventory.ini
 
 ```ini
 [ansible_controller]
@@ -70,17 +70,17 @@ ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
 ## 5. Playbooks
 
-### logs_baseline.yml — Configuració del servidor de logs
+### logs_baseline.yml — Configuración del servidor de logs
 
-Configura `logs-server-private` com a receptor rsyslog i munta el EFS.
+Configura `logs-server-private` como receptor rsyslog y monta el EFS.
 
 ```yaml
 ---
-- name: Configuració servidor de logs centralitzats
+- name: Configuración servidor de logs centralizados
   hosts: logs
   become: yes
   tasks:
-    - name: Instal·lar rsyslog i nfs-common
+    - name: Instalar rsyslog y nfs-common
       apt:
         name:
           - rsyslog
@@ -88,13 +88,13 @@ Configura `logs-server-private` com a receptor rsyslog i munta el EFS.
         state: present
         update_cache: yes
 
-    - name: Crear directori de muntatge EFS
+    - name: Crear directorio de montaje EFS
       file:
         path: /mnt/efs-logs
         state: directory
         mode: '0777'
 
-    - name: Muntar EFS
+    - name: Montar EFS
       mount:
         path: /mnt/efs-logs
         src: "10.0.142.148:/"
@@ -102,7 +102,7 @@ Configura `logs-server-private` com a receptor rsyslog i munta el EFS.
         opts: nfsvers=4.1,_netdev
         state: mounted
 
-    - name: Configurar rsyslog per rebre logs remots
+    - name: Configurar rsyslog para recibir logs remotos
       blockinfile:
         path: /etc/rsyslog.conf
         block: |
@@ -120,23 +120,23 @@ Configura `logs-server-private` com a receptor rsyslog i munta el EFS.
         enabled: yes
 ```
 
-### logs_clients.yml — Configuració dels clients rsyslog
+### logs_clients.yml — Configuración de los clientes rsyslog
 
-Configura totes les EC2 per enviar logs a `logs-server-private`.
+Configura todas las EC2 para enviar logs a `logs-server-private`.
 
 ```yaml
 ---
-- name: Configuració clients rsyslog
+- name: Configuración clientes rsyslog
   hosts: all
   become: yes
   tasks:
-    - name: Instal·lar rsyslog
+    - name: Instalar rsyslog
       apt:
         name: rsyslog
         state: present
         update_cache: yes
 
-    - name: Configurar enviament de logs al servidor central
+    - name: Configurar envío de logs al servidor central
       copy:
         content: "*.* @@10.0.133.107:514\n"
         dest: /etc/rsyslog.d/99-remote.conf
@@ -149,15 +149,15 @@ Configura totes les EC2 per enviar logs a `logs-server-private`.
         enabled: yes
 ```
 
-### mariadb.yml — Configuració de MariaDB
+### mariadb.yml — Configuración de MariaDB
 
 ```yaml
 ---
-- name: Configuració MariaDB
+- name: Configuración MariaDB
   hosts: mariadb
   become: yes
   tasks:
-    - name: Instal·lar MariaDB
+    - name: Instalar MariaDB
       apt:
         name:
           - mariadb-server
@@ -165,7 +165,7 @@ Configura totes les EC2 per enviar logs a `logs-server-private`.
         state: present
         update_cache: yes
 
-    - name: Habilitar i iniciar MariaDB
+    - name: Habilitar e iniciar MariaDB
       systemd:
         name: mariadb
         state: started
@@ -185,29 +185,29 @@ Configura totes les EC2 per enviar logs a `logs-server-private`.
 
 ---
 
-## 6. Execució dels playbooks
+## 6. Ejecución de los playbooks
 
 ```bash
 cd ~/proyecto-ibdt
 
-# Verificar connectivitat amb totes les màquines
+# Verificar conectividad con todas las máquinas
 ansible all -i inventory/inventory.ini -m ping
 
-# Executar configuració del servidor de logs
+# Ejecutar configuración del servidor de logs
 ansible-playbook -i inventory/inventory.ini playbooks/logs_baseline.yml
 
-# Executar configuració dels clients
+# Ejecutar configuración de los clientes
 ansible-playbook -i inventory/inventory.ini playbooks/logs_clients.yml
 
-# Executar configuració de MariaDB
+# Ejecutar configuración de MariaDB
 ansible-playbook -i inventory/inventory.ini playbooks/mariadb.yml
 ```
 
 ---
 
-## 7. Verificació
+## 7. Verificación
 
-### Ping a totes les màquines
+### Ping a todas las máquinas
 
 ```bash
 $ ansible all -i inventory/inventory.ini -m ping
@@ -220,42 +220,39 @@ $ ansible all -i inventory/inventory.ini -m ping
 32.193.193.146 | SUCCESS => { "ping": "pong" }
 ```
 
-### Enviar logs de prova a totes les màquines
+### Enviar logs de prueba a todas las máquinas
 
 ```bash
 ansible all -i inventory/inventory.ini -m command \
-  -a "logger 'InnovateTech sistema actiu $(date)'"
+  -a "logger 'InnovateTech sistema activo $(date)'"
 ```
 
 ---
 
-## 8. Màquines automatitzades
+## 8. Máquinas automatizadas
 
-| Màquina | Playbook | Configuració aplicada |
-|---------|----------|-----------------------|
-| logs-server-private | logs_baseline.yml | rsyslog receptor + EFS muntat |
-| web-sftp | logs_clients.yml | rsyslog client → logs-server |
-| mariadb | logs_clients.yml + mariadb.yml | rsyslog client + MariaDB configurat |
-| multimedia | logs_clients.yml | rsyslog client → logs-server |
-| jitsi-meet | logs_clients.yml | rsyslog client → logs-server |
-| samba-ad | logs_clients.yml | rsyslog client → logs-server |
-| ansible-controller | logs_clients.yml | rsyslog client → logs-server |
+| Máquina | Playbook | Configuración aplicada |
+|---------|----------|------------------------|
+| logs-server-private | logs_baseline.yml | rsyslog receptor + EFS montado |
+| web-sftp | logs_clients.yml | rsyslog cliente → logs-server |
+| mariadb | logs_clients.yml + mariadb.yml | rsyslog cliente + MariaDB configurado |
+| multimedia | logs_clients.yml | rsyslog cliente → logs-server |
+| jitsi-meet | logs_clients.yml | rsyslog cliente → logs-server |
+| samba-ad | logs_clients.yml | rsyslog cliente → logs-server |
+| ansible-controller | logs_clients.yml | rsyslog cliente → logs-server |
 
 ---
 
-## 9. Evidències
+## 9. Evidencias
 
-### Ping a totes les màquines
+### Ping a todas las máquinas
 
-<img width="708" height="942" alt="imatge" src="https://github.com/user-attachments/assets/43a01b42-7347-4dc3-8a19-7a8b7d9fa545" />
+<img width="708" height="942" alt="Ansible ping todas las máquinas" src="https://github.com/user-attachments/assets/43a01b42-7347-4dc3-8a19-7a8b7d9fa545" />
 
+### Ejecución del playbook logs_clients.yml
 
-### Execució del playbook logs_clients.yml
+<img width="714" height="797" alt="Ejecución playbook logs_clients" src="https://github.com/user-attachments/assets/9d3d809c-c895-459e-b74b-5d8d1054ccd8" />
 
-<img width="714" height="797" alt="imatge" src="https://github.com/user-attachments/assets/9d3d809c-c895-459e-b74b-5d8d1054ccd8" />
+### Inventario configurado
 
-
-
-### Inventari configurat
-
-<img width="711" height="474" alt="imatge" src="https://github.com/user-attachments/assets/d56caeda-df75-464c-a5c4-649c0f95476b" />
+<img width="711" height="474" alt="Inventario Ansible" src="https://github.com/user-attachments/assets/d56caeda-df75-464c-a5c4-649c0f95476b" />
