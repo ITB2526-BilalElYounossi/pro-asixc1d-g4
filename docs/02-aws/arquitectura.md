@@ -13,7 +13,8 @@ Infraestructura desplegada a AWS regi√≥ `us-east-1` amb VPC dedicada, subnets p√
 
 ## 2. Diagrama de l'arquitectura
 
-![Arquitectura AWS InnovateTech](../../media/aws/arquitectura.png)
+<img width="607" height="694" alt="imatge" src="https://github.com/user-attachments/assets/3095c451-b0ae-4596-ae93-a213af9b0e2e" />
+
 
 ---
 
