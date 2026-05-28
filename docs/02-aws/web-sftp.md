@@ -884,11 +884,11 @@ ls
 
 Esta estructura permite separar los ficheros de cada usuario y organizar el flujo de intercambio con MariaDB.
 
-**Evidencia:** captura donde se vea la estructura de carpetas SFTP del usuario `BTIS\joan.garcia`.
+**Evidencia:** captura donde se ve la estructura de carpetas SFTP del usuario `BTIS\joan.garcia`.
 
 <img width="739" height="601" alt="{FA3DFD1E-C93C-4922-A45E-96856FA1DDB8}" src="https://github.com/user-attachments/assets/4e72eefd-d956-4d52-9b60-f83ad94cdbad" />
 
-**Evidencia:** captura desde el cliente SFTP donde se vean las carpetas `download` y `upload`.
+**Evidencia:** captura desde el cliente SFTP donde se ve las carpetas `download` y `upload`.
 
 <img width="1030" height="242" alt="{CD1FA11C-6AD7-4B0B-AF0E-F7D314AC51E1}" src="https://github.com/user-attachments/assets/9dfc874e-981e-4d07-8c69-a9415e893d8b" />
 
@@ -1026,16 +1026,16 @@ sudo crontab -e
 La línea añadida fue:
 
 ```cron
-*/5 * * * * /usr/bin/php /usr/local/bin/sftp_db_sync.php >> /var/log/sftp_sync.log 2>&1
+*/2 * * * * /usr/bin/php /usr/local/bin/sftp_db_sync.php >> /var/log/sftp_sync.log 2>&1
 ```
 
-Esta línea ejecuta el script cada 5 minutos.
+Esta línea ejecuta el script cada 2 minutos.
 
 Explicación de la tarea:
 
 | Parte | Significado |
 |---|---|
-| `*/5 * * * *` | Ejecuta la tarea cada 5 minutos |
+| `*/2 * * * *` | Ejecuta la tarea cada 2 minutos |
 | `/usr/bin/php` | Intérprete PHP utilizado para ejecutar el script |
 | `/usr/local/bin/sftp_db_sync.php` | Script de sincronización SFTP ↔ MariaDB |
 | `>> /var/log/sftp_sync.log` | Guarda la salida en un fichero de log |
@@ -1059,7 +1059,7 @@ Con esta automatización, la integración entre SFTP y MariaDB queda programada 
 
 <img width="802" height="60" alt="{19D8D04B-3FD8-469A-BF9A-BE58A15DAABF}" src="https://github.com/user-attachments/assets/22436a5d-3c6d-4de1-83a6-f7ce54a1fd89" />
 
-**Evidencia ** captura del fichero `/var/log/sftp_sync.log` mostrando ejecuciones del script.
+**Evidencia** captura del fichero `/var/log/sftp_sync.log` mostrando ejecuciones del script.
 
 <img width="927" height="545" alt="{E5293211-BA6F-41AD-B0EC-6DD321551767}" src="https://github.com/user-attachments/assets/fde0ebe0-258a-448b-a23b-86257521d8a5" />
 
@@ -1215,17 +1215,17 @@ Esta integración permite que el portal web actúe como punto central de acceso 
 
 En la captura se muestra la configuración de NGINX utilizada para integrar las rutas `/radio/`, `/jitsi/` y `/jellyfin/` desde el servidor `web-sftp`.
 
-**Evidencia:** captura donde se comprueben las rutas con `curl`.
+**Evidencia:** captura donde se comprueban las rutas con `curl`.
 
 <img width="594" height="869" alt="{FB15CE69-3FDD-474D-9113-036A5D44B536}" src="https://github.com/user-attachments/assets/df814c79-1f70-4f3a-b4ab-224e3edaea98" />
 
 En la captura se comprueba que las rutas multimedia responden desde el servidor `web-sftp`, permitiendo acceder a radio, videoconferencia y vídeo desde el portal.
 
-**Evidencia visual:** captura del portal mostrando los botones de acceso a Radio, Jitsi y Jellyfin.
+**Evidencia:** captura del portal mostrando los botones de acceso a Radio, Jitsi y Jellyfin.
 
 <img width="1082" height="128" alt="{AF632BFC-D56B-4CAB-BC56-959E4BA0E225}" src="https://github.com/user-attachments/assets/3bf49756-608f-435b-9040-831b630405ca" />
 
-En la evidencia visual se comprueba que el dashboard interno incluye accesos directos a los servicios multimedia integrados.
+En la captura se comprueba que el dashboard interno incluye accesos directos a los servicios multimedia integrados.
 
 ## 22. Conclusión
 El servidor `web-sftp` quedó configurado como uno de los puntos principales de acceso de la infraestructura de InnovateTech.
