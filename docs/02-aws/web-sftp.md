@@ -185,7 +185,7 @@ Con estos paquetes instalados, el servidor quedó preparado para:
 - Reconocer usuarios del dominio mediante Winbind.
 - Permitir acceso SSH/SFTP.
 
-**Evidencia:** captura donde se comprueben las versiones de NGINX/PHP, módulos PHP necesarios y servicios principales activos.
+**Evidencia:** captura donde se comprueban las versiones de NGINX/PHP, módulos PHP necesarios y servicios principales activos.
 
 <img width="614" height="317" alt="{78874DD4-A036-4943-BA63-582D0A387167}" src="https://github.com/user-attachments/assets/86ec0ba9-4255-4af5-af54-9c40c8153b9a" />
 <img width="777" height="73" alt="{2152506F-3186-4B49-BD89-F167E1C11FE3}" src="https://github.com/user-attachments/assets/d7d3ca1f-a664-4e87-8caf-d88fd2554bfc" />
@@ -332,7 +332,7 @@ La configuración utiliza dos bloques principales:
 - Un bloque en el puerto `80`, encargado de redirigir todo el tráfico HTTP hacia HTTPS.
 - Un bloque en el puerto `443`, encargado de servir el portal web con certificado SSL.
 
-La redirección HTTP a HTTPS se configuró en NGINX con la siguiente directiva:
+La redirección HTTP a HTTPS se configuró en NGINX con la siguiente estructura:
 
 ```nginx
 server {
@@ -398,6 +398,7 @@ Con estas pruebas se valida que el servidor redirige correctamente HTTP hacia HT
 
 <img width="571" height="659" alt="{AE578978-675B-4B0C-9F41-522C877A2D03}" src="https://github.com/user-attachments/assets/e4b03814-3410-4975-ba77-c5bd1b9d9b53" />
 <img width="551" height="87" alt="{D6E3C6BC-5DFD-4F5A-B6B5-82C0163184A6}" src="https://github.com/user-attachments/assets/47c5d2f3-ce4a-44bd-a46c-ec7bf3b5d143" />
+
 Además, se comprobó visualmente desde el navegador que el portal carga mediante `https://52.1.67.249/login.php`. El navegador muestra el aviso de “No es seguro” porque el certificado utilizado es autofirmado, pero la conexión se realiza mediante HTTPS.
 
 ## 9. Certificado SSL con Subject Alternative Name
@@ -585,7 +586,7 @@ El usuario `admin.itb` se utiliza como usuario administrador del portal, mientra
 
 Esta integración permite que el portal web no dependa de usuarios locales propios, sino de las cuentas corporativas almacenadas en Samba AD.
 
-**Evidencia:** captura donde se compruebe el módulo LDAP de PHP y la validación del archivo `login.php`.
+**Evidencia:** captura donde se comprueba el módulo LDAP de PHP y la validación del archivo `login.php`.
 <img width="1065" height="331" alt="{4146D64F-0691-4C1C-AB1F-3239D6297D95}" src="https://github.com/user-attachments/assets/a41119b1-faa1-41a2-a3f6-8ad701edbbe3" />
 
 **Evidencia visual:** captura del inicio de sesión correcto en el portal con un usuario del dominio.
@@ -633,7 +634,9 @@ El portal utiliza esta conexión para cargar dinámicamente las tablas que se mu
 Esta integración cumple con la parte del proyecto donde la base de datos debe servir como fuente de datos para una aplicación de gestión alojada en el servidor web.
 
 **Evidencia:** captura donde se comprueba la conexión desde `web-sftp` hacia MariaDB mediante PHP/PDO.
+
 <img width="1206" height="1161" alt="{21216820-9E5B-44FB-A9D0-B29E423C325A}" src="https://github.com/user-attachments/assets/5743cba6-5054-49a9-80ee-cc83cf7ad5e6" />
+
 En la captura se comprueba que el servidor `web-sftp` puede conectarse correctamente a MariaDB usando el usuario `web_readonly` y consultar datos reales de la base de datos `innovatetech`. Esto demuestra que el portal web no utiliza datos estáticos, sino información obtenida directamente desde la base de datos del proyecto.
 
 ## 13. Control de acceso por usuario en el portal
@@ -675,7 +678,7 @@ También se comprobó visualmente iniciando sesión con diferentes usuarios del 
 
 Esta capa de control de acceso en la aplicación complementa los roles y permisos SQL definidos en MariaDB, documentados en la parte de base de datos.
 
-**Evidencia:** captura del portal iniciado como `joan.garcia`, mostrando únicamente las secciones correspondientes al área de ventas.
+**Evidencia:** captura del portal iniciado como `joan.garcia`, mostrando sus secciones correspondientes al área de ventas.
 
 <img width="1259" height="523" alt="{04091988-9129-4630-9C68-1E5403961F70}" src="https://github.com/user-attachments/assets/6bc52e2f-04c9-4253-86ee-de281db0ac0d" />
 
@@ -736,16 +739,7 @@ Copiar tabla
 
 Por tanto, `joan.garcia` puede descargar información de sus tablas permitidas, como `clients`:
 
-```text
-https://52.1.67.249/download.php?tabla=clients&formato=csv
-```
-
 En cambio, tablas como `nomines` no aparecen directamente en su portal, ya que no pertenecen a su perfil. Además, si el usuario intenta acceder manualmente a una URL de descarga de una tabla no permitida, `download.php` bloquea la petición:
-
-```text
-https://52.1.67.249/download.php?tabla=nomines&formato=csv
-```
-
 El resultado esperado en ese caso es:
 
 ```text
@@ -774,7 +768,7 @@ Esta funcionalidad permite exportar información desde el portal de forma contro
 
 <img width="1254" height="527" alt="{8C858824-E74D-4DF7-A00B-FB8A1B71D5BC}" src="https://github.com/user-attachments/assets/f2bae121-9481-4f1d-9538-319db062f684" />
 
-**Evidencia opcional:** caprura de por ejemplo el usaurio joan Garcia no ve el apartado `nominas`.
+**Evidencia :** captura de ejemplo de joan.garcia no puede ver otros apartados, como por ejemplo `nominas`.
 
 <img width="217" height="525" alt="{0CA44619-ECB8-4195-87B7-B5B0AF643CA6}" src="https://github.com/user-attachments/assets/eeabc48c-8c76-4e06-9fb8-d3803dba7e16" />
 
