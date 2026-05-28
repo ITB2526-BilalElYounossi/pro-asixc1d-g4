@@ -178,10 +178,14 @@ L'ALB permet afegir futures instàncies web en alta disponibilitat sense canviar
 ## 8. Evidències
 
 ### Instàncies EC2 en execució
-> Afegir captura de pantalla de la consola AWS amb les 7 instàncies actives.
+<img width="1582" height="278" alt="imatge" src="https://github.com/user-attachments/assets/03216ae4-d534-42e8-908b-a30de0119032" />
+
 
 ### VPC i Subnets
-> Afegir captura de pantalla de la configuració de VPC.
+<img width="1593" height="193" alt="imatge" src="https://github.com/user-attachments/assets/9af54659-2c7e-4b91-bcfa-f4e768b21391" />
+<img width="1596" height="251" alt="imatge" src="https://github.com/user-attachments/assets/06956a98-ba05-4697-93f5-7b6892df5a18" />
+
+
 
 ### EFS muntat
 ```bash
@@ -189,3 +193,5 @@ $ df -h | grep mnt
 10.0.50.145:/   8.0E     0  8.0E   0% /mnt/efs-logs   # web-sftp
 10.0.142.148:/  8.0E  623M  8.0E   1% /mnt/efs-logs   # logs-server-private
 ```
+<img width="1547" height="852" alt="imatge" src="https://github.com/user-attachments/assets/51ff99e1-4311-4a54-88f1-8d49d8d9d506" />
+
