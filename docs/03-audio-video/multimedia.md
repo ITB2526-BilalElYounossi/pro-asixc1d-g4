@@ -5,7 +5,36 @@
 **Puerto:** 8096 TCP
 
 ---
+## Índice
 
+1. [Descripción del servicio](#1-descripción-del-servicio)
+2. [Requerimientos](#2-requerimientos)
+3. [Instalación](#3-instalación)
+4. [Configuración del servicio](#4-configuración-del-servicio)
+   - [Paso 1 — Crear directorio y descargar vídeo de prueba](#paso-1--crear-directorio-y-descargar-vídeo-de-prueba)
+   - [Paso 2 — Configuración inicial vía wizard web](#paso-2--configuración-inicial-via-wizard-web)
+   - [Paso 3 — Usuarios creados en Jellyfin](#paso-3--usuarios-creados-en-jellyfin)
+5. [Configuración de streaming en directo — archivos .strm](#5-configuración-de-streaming-en-directo--archivos-strm)
+   - [Paso 1 — Crear directorio para directos](#paso-1--crear-directorio-para-directos)
+   - [Paso 2 — Crear archivo .strm con la URL del directo](#paso-2--crear-archivo-strm-con-la-url-del-directo)
+   - [Paso 3 — Desactivar transcoding en Jellyfin](#paso-3--desactivar-transcoding-en-jellyfin-crítico)
+   - [Paso 4 — Añadir biblioteca en Jellyfin](#paso-4--añadir-biblioteca-en-jellyfin)
+6. [Formatos y codecs utilizados](#6-formatos-y-codecs-utilizados)
+7. [Reproducción desde el navegador](#7-reproducción-desde-el-navegador)
+8. [Integración con MariaDB](#8-integración-con-mariadb)
+9. [Validación del servicio](#9-validación-del-servicio)
+10. [Incidencias y soluciones](#10-incidencias-y-soluciones)
+11. [Security Group — SG-MULTIMEDIA](#11-security-group--sg-multimedia)
+12. [Comprobaciones de Ancho de Banda](#12-comprobaciones-de-ancho-de-banda)
+    - [12.1 Objetivo](#121-objetivo)
+    - [12.2 Requisitos mínimos obligatorios](#122-requisitos-mínimos-obligatorios)
+    - [12.3 Herramientas utilizadas](#123-herramientas-utilizadas)
+    - [12.4 Prueba 1 — Sin servicios activos](#124-prueba-1---sin-servicios-activos-línea-base)
+    - [12.5 Prueba 2 — Con todos los servicios activos](#125-prueba-2---con-todos-los-servicios-activos)
+    - [12.6 Análisis de resultados](#126-análisis-de-resultados)
+    - [12.7 Clasificación del sistema](#127-clasificación-del-sistema)
+    - [12.8 Propuestas de optimización](#128-propuestas-de-optimización)
+      
 ## 1. Descripción del servicio
 
 Jellyfin es un servidor de streaming de vídeo de código abierto que permite organizar, gestionar y distribuir contenido audiovisual a través de una interfaz web intuitiva. Soporta transcodificación en tiempo real y es accesible desde cualquier navegador moderno sin plugins adicionales.
