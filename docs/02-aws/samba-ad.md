@@ -1,5 +1,22 @@
-# Samba AD — Directorio Activo de InnovateTech
 
+
+
+# Samba AD — Directorio Activo de InnovateTech
+## Índice
+
+1. [Objetivo del servicio](#1-objetivo-del-servicio)
+2. [Datos del dominio](#2-datos-del-dominio)
+3. [Preparación del servidor Samba AD](#3-preparación-del-servidor-samba-ad)
+4. [Instalación de paquetes necesarios](#4-instalación-de-paquetes-necesarios)
+5. [Provisionado del dominio](#5-provisionado-del-dominio)
+6. [Configuración de DNS y Kerberos](#6-configuración-de-dns-y-kerberos)
+7. [Creación de usuarios del dominio](#7-creación-de-usuarios-del-dominio)
+8. [Creación de grupos del dominio](#8-creación-de-grupos-del-dominio)
+9. [Usuario administrativo admin.itb](#9-usuario-administrativo-adminitb)
+10. [Comprobaciones realizadas](#10-comprobaciones-realizadas)
+11. [Integración con el servidor web-sftp](#11-integración-con-el-servidor-web-sftp)
+12. [Conclusión](#12-conclusión)
+    
 ## 1. Objetivo del servicio
 En esta parte del proyecto se configuró un servidor Samba AD para actuar como servicio de Directorio Activo de la empresa ficticia InnovateTech.
 
