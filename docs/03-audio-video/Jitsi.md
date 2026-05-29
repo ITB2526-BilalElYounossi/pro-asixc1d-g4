@@ -5,7 +5,18 @@
 **Puertos:** 80, 443 TCP - 10000 UDP
 
 ---
+## Índice
 
+1. [Descripción del servicio](#1-descripción-del-servicio)
+2. [Protocolo WebRTC](#2-protocolo-webrtc)
+3. [Requerimientos](#3-requerimientos)
+4. [Instalación con Docker en EC2-4](#4-instalación-con-docker-en-ec2-4)
+5. [Configuración del archivo .env](#5-configuración-del-archivo-env)
+6. [Prueba de videollamada](#6-prueba-de-videollamada)
+7. [Validación del servicio](#7-validación-del-servicio)
+8. [Incidencias y soluciones](#8-incidencias-y-soluciones)
+9. [Security Group — SG-JITSI](#9-security-group---sg-jitsi)
+    
 ## 1. Descripción del servicio
 
 Jitsi Meet es una plataforma de videoconferencia de código abierto basada en WebRTC que permite realizar videollamadas directamente desde el navegador sin instalar software adicional. Se ha desplegado en un servidor EC2 separado (EC2-4) usando Docker Compose, que es el método oficial recomendado.
