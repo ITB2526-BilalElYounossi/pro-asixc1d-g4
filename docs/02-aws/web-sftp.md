@@ -1250,7 +1250,7 @@ En la captura se comprueba que las rutas multimedia responden desde el servidor 
 
 En la captura se comprueba que el dashboard interno incluye accesos directos a los servicios multimedia integrados.
 
-## 22. Conclusión
+## 20. Conclusión
 El servidor `web-sftp` quedó configurado como uno de los puntos principales de acceso de la infraestructura de InnovateTech.
 
 En esta máquina se integraron el servicio web, el acceso SFTP, la autenticación con Samba AD y la conexión con MariaDB. De esta forma, los usuarios internos pueden acceder al portal con sus credenciales corporativas, consultar información real de la base de datos y descargar datos en formato CSV o SQL según su perfil.
