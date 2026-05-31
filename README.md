@@ -150,38 +150,6 @@ InnovateTech es una empresa dedicada a la provisión de servicios tecnológicos 
 
 ---
 
-## Estructura del repositorio
-
-```
-Proyecto-Transversal-TIBS/
-├── README.md
-├── docs/
-│   ├── 01-cpd/
-│   │   └── cpd.md                  → Propuesta CPD físico (Bilal)
-│   ├── 02-aws/
-│   │   ├── arquitectura.md         → VPC, subnets, EC2, SG (Bilal)
-│   │   ├── ansible.md              → Playbooks, inventario (Bilal y Izan)
-│   │   ├── logs.md                 → Rsyslog + EFS (Bilal)
-│   │   ├── samba-ad.md             → Directorio Activo (Taylor)
-│   │   └── web-sftp.md             → NGINX, PHP, SFTP (Taylor)
-│   ├── 03-audio-video/
-│   │   ├── icecast-radio.md        → Radio en directo (Serhii)
-│   │   ├── jellyfin.md             → Vídeo bajo demanda (Serghei)
-│   │   ├── live-streaming.md       → Canal vídeo en directo (Serhii)
-│   │   └── jitsi.md                → Videoconferencias (Serghei)
-│   └── 04-BaseDeDades/
-│       ├── disseny-er.md           → Modelo E/R (Izan)
-│       ├── usuaris-rols.md         → Roles y permisos (Izan)
-│       └── triggers-events.md      → Triggers y backups (Izan)
-├── infrastructure/
-│   └── aws/
-│       └── vpc.md
-├── media/
-│   ├── aws/                        → Capturas infraestructura
-│   └── cpd/                        → Imágenes CPD físico
-└── tests/
-    └── test-plan.md
-```
 
 ---
 
